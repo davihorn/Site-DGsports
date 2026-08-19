@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camisas por Time - DG Sports</title>
+    <link rel="icon" href="image.png" type="image/png">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #f4f4f4; color: #333; }
+        header { background-color: #fff; padding: 15px 50px; display: flex; align-items: center; justify-content: space-between; }
+        .logo img { height: 80px; }
+        
+        .menu-categorias { background-color: #e5ff00; padding: 15px 50px; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; border-bottom: 2px solid #ccc; }
+        .menu-categorias a { text-decoration: none; color: #000; font-weight: bold; text-transform: uppercase; font-size: 0.9em; transition: 0.2s; }
+        .menu-categorias a:hover { opacity: 0.7; }
+
+        .titulo-time { text-align: center; margin: 50px 0 20px; font-size: 2em; text-transform: uppercase; border-bottom: 3px solid #000; display: inline-block; padding-bottom: 5px; }
+        .container-titulo { text-align: center; }
+        
+        .vitrine { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; padding: 0 50px 50px; max-width: 1200px; margin: 0 auto; }
+        .card { background: #fff; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .card img { width: 100%; border-radius: 5px; margin-bottom: 15px; object-fit: cover; aspect-ratio: 1/1; }
+        .card h3 { font-size: 1.2em; margin-bottom: 10px; color: #000; }
+        .card .preco { font-size: 1.4em; font-weight: bold; color: #27ae60; margin-bottom: 15px; }
+        .btn-detalhes { display: inline-block; background-color: #000; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 4px; font-weight: bold; width: 100%; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html"><img src="image.png" alt="Logo DG Sports"></a></div>
+        <a href="index.html" style="color: black; font-weight: bold; text-decoration: none;">&larr; Voltar para a Loja</a>
+    </header>
+
+    <div class="menu-categorias">
+        <a href="index.html">Início</a>
+        <a href="time.html?clube=real">Real Madrid</a>
+        <a href="time.html?clube=atletico">Atlético de Madrid</a>
+    </div>
+
+    <div class="container-titulo"><h2 class="titulo-time" id="titulo-pagina">Carregando...</h2></div>
+    
+    <section class="vitrine" id="vitrine-time">
+        <!-- O Javascript vai injetar os cards aqui -->
+    </section>
+
+    <script>
+        // SEU BANCO DE DADOS (Copie e cole os mesmos dados do produto.html aqui)
+        const catalogo = {
+            "real1": {
+                clube: "real",
+                nome: "Camisa Real Madrid I Branca",
+                preco: "R$ 149,90",
+                foto: "real madrid frente.jpg"
+            },
+            "atletico1": {
+                clube: "atletico",
+                nome: "Camisa Atlético de Madrid I",
+                preco: "R$ 149,90",
+                foto: "atletico madrid frente.jpg"
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const clubeEscolhido = urlParams.get('clube');
+        const vitrine = document.getElementById('vitrine-time');
+        const titulo = document.getElementById('titulo-pagina');
+
+        if (clubeEscolhido === 'real') titulo.innerText = "Real Madrid";
+        else if (clubeEscolhido === 'atletico') titulo.innerText = "Atlético de Madrid";
+        else titulo.innerText = "Camisas Encontradas";
+
+        for (const idProduto in catalogo) {
+            const camisa = catalogo[idProduto];
+            
+            if (camisa.clube === clubeEscolhido) {
+                let cardHTML = `
+                    <div class="card">
+                        <img src="${camisa.foto}" alt="${camisa.nome}">
+                        <h3>${camisa.nome}</h3>
+                        <p class="preco">${camisa.preco}</p>
+                        <a href="produto.html?id=${idProduto}" class="btn-detalhes">Ver Detalhes</a>
+                    </div>
+                `;
+                vitrine.innerHTML += cardHTML;
+            }
+        }
+    </script>
+</body>
+</html>
