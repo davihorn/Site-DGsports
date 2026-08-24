@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DG Sports | Loja de Camisas</title>
+    <title>Camisas por Liga - DG Sports</title>
     
     <link rel="icon" href="assets/img/favicon.png" type="image/png">
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/img/favicon.png">
     
-    <!-- BIBLIOTECA DE ÍCONES (FONT AWESOME) -->
+    <!-- BIBLIOTECA DE ÍCONES (FONT AWESOME) - ISSO AQUI FALTAVA -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -20,8 +20,7 @@
         /* CABEÇALHO */
         .top-bar { background-color: #1a1aff; color: white; text-align: center; padding: 5px 0; font-size: 0.8em; }
         .top-bar a { color: white; text-decoration: none; margin: 0 10px; }
-        /* Adiciona um espacinho entre a logo e o nome da rede social */
-        .top-bar a i { margin-right: 5px; font-size: 1.1em; } 
+        .top-bar a i { margin-right: 5px; font-size: 1.1em; } /* Espaço no ícone */
         
         .header-amarelo { background-color: #e5ff00; padding: 15px 50px; display: flex; align-items: center; justify-content: space-between; }
         .logo img { height: 70px; }
@@ -38,8 +37,7 @@
 
         /* CONTEÚDO PRINCIPAL */
         .conteudo-principal { flex: 1; }
-        .banner-hero img { width: 100%; height: auto; max-height: 500px; object-fit: cover; display: block; }
-        .titulo-secao { text-align: center; margin: 40px 0; font-size: 1.8em; font-weight: bold; }
+        .titulo-secao { text-align: center; margin: 40px 0; font-size: 1.8em; font-weight: bold; text-transform: uppercase; }
         .vitrine { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; padding: 0 50px 50px; max-width: 1200px; margin: 0 auto; }
         
         /* CARD DOS PRODUTOS */
@@ -65,7 +63,7 @@
         .footer-redes { margin-bottom: 20px; }
         .footer-redes a { color: #e5ff00; text-decoration: none; font-size: 1.2em; margin: 0 15px; transition: 0.3s; font-weight: bold; }
         .footer-redes a:hover { color: #fff; }
-        .footer-redes a i { margin-right: 8px; } /* Espaço entre o ícone e o texto no footer */
+        .footer-redes a i { margin-right: 8px; } /* Espaço no ícone */
         .footer-texto { margin-top: 20px; font-size: 0.9em; color: #aaa; border-top: 1px solid #444; padding-top: 20px; line-height: 1.5; }
 
         /* REGRAS PARA CELULAR (Design Responsivo) */
@@ -76,7 +74,7 @@
             .vitrine { padding: 0 20px 30px; grid-template-columns: repeat(2, 1fr); gap: 10px; } 
             .carrinho-modal { width: 100%; } 
             .footer { padding: 30px 20px; }
-            .footer-redes a { display: inline-block; margin: 10px; font-size: 1em; }
+            .footer-redes a { display: inline-block; margin: 10px; }
         }
     </style>
 </head>
@@ -84,7 +82,7 @@
 
     <div class="top-bar">
         <a href="https://www.instagram.com/dgsportsbrasil?igsi=MWloN3ltY3N1c2pvag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | 
-        <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a> |
+        <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a> | 
         <a href="https://wa.me/5546991087501" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
     
@@ -93,7 +91,6 @@
         <div class="carrinho-icon" onclick="abrirCarrinho()"><span>🛒</span><div class="badge-carrinho" id="contagem-carrinho">0</div></div>
     </header>
 
-    <!-- MENU POR LIGAS -->
     <div class="menu-categorias">
         <a href="index.html">Início</a>
         <a href="liga.html?liga=laliga">La Liga</a>
@@ -102,42 +99,8 @@
     </div>
 
     <div class="conteudo-principal">
-        <div class="banner-hero"><img src="assets/img/banner.jpg" alt="Banner DG Sports"></div>
-        <h2 class="titulo-secao">Lançamentos 24/25</h2>
-        
-        <section class="vitrine">
-            <!-- QUADRADINHO DA CAMISA 1 -->
-            <div class="card">
-                <img src="assets/img/real madrid/real madrid frente.jpg" alt="Camisa Real Madrid">
-                <h3>Camisa Real Madrid I Branca</h3>
-                <p class="preco">R$ 149,90</p>
-                <a href="produto.html?id=real1" class="btn-detalhes">Ver Detalhes</a>
-            </div>
-            <!-- QUADRADINHO DA CAMISA 2 -->
-            <div class="card">
-                <img src="assets/img/atletico madrid/atletico madrid frente.png" alt="Camisa Atlético">
-                <h3>Camisa Atlético de Madrid I</h3>
-                <p class="preco">R$ 149,90</p>
-                <a href="produto.html?id=atletico1" class="btn-detalhes">Ver Detalhes</a>
-            </div>
-
-            <!-- QUADRADINHO DA CAMISA 3 -->
-            <div class="card">
-                <img src="assets/img/flamengo/flamengo frente.jpg" alt="Camisa Flamengo">
-                <h3>Camisa Flamengo I</h3>
-                <p class="preco">R$ 149,90</p>
-                <a href="produto.html?id=flamengo1" class="btn-detalhes">Ver Detalhes</a>
-            </div>
-
-            <!-- QUADRADINHO DA CAMISA 4 -->
-            <div class="card">
-                <img src="assets/img/brasil/brasil frente.jpg" alt="Camisa Brasil">
-                <h3>Camisa Brasil I 2026</h3>
-                <p class="preco">R$ 299,90</p>
-                <a href="produto.html?id=brasil1" class="btn-detalhes">Ver Detalhes</a>
-            </div>
-
-        </section>
+        <h2 class="titulo-secao" id="titulo-pagina">Carregando...</h2>
+        <section class="vitrine" id="vitrine-liga"></section>
     </div>
 
     <footer class="footer">
@@ -146,13 +109,10 @@
             <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
             <a href="https://wa.me/5546991087501" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
-        <div class="footer-texto">
-            <p>&copy; 2026 DG Sports - Todos os direitos reservados.</p>
-            <p>Pato Branco, Paraná - PR</p>
-        </div>
+        <div class="footer-texto"><p>&copy; 2026 DG Sports - Todos os direitos reservados.</p><p>Pato Branco, Paraná - PR</p></div>
     </footer>
 
-    <!-- CARRINHO -->
+    <!-- CARRINHO E JS (MANTIDOS IGUAL VOCÊ MANDOU) -->
     <div class="fundo-escuro" id="fundo-escuro" onclick="fecharCarrinho()"></div>
     <div class="carrinho-modal" id="carrinho-modal">
         <div class="carrinho-header"><h2>Seu Carrinho</h2><span class="fechar-carrinho" onclick="fecharCarrinho()">X</span></div>
@@ -161,26 +121,48 @@
     </div>
 
     <script>
+        const catalogo = {
+            "real1": { liga: "laliga", nome: "Camisa Real Madrid I Branca", preco: "R$ 149,90", foto: "assets/img/real madrid/real madrid frente.jpg" },
+            "atletico1": { liga: "laliga", nome: "Camisa Atlético de Madrid I", preco: "R$ 149,90", foto: "assets/img/atletico madrid/atletico madrid frente.png" },
+            "flamengo1": { liga: "brasileirao", nome: "Camisa Flamengo I", preco: "R$ 149,90", foto: "assets/img/flamengo/flamengo frente.jpg" }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const ligaEscolhida = urlParams.get('liga');
+        const vitrine = document.getElementById('vitrine-liga');
+        const titulo = document.getElementById('titulo-pagina');
+
+        if (ligaEscolhida === 'laliga') titulo.innerText = "La Liga";
+        else if (ligaEscolhida === 'premier') titulo.innerText = "Premier League";
+        else if (ligaEscolhida === 'brasileirao') titulo.innerText = "Brasileirão";
+        else titulo.innerText = "Camisas Encontradas";
+
+        for (const idProduto in catalogo) {
+            const camisa = catalogo[idProduto];
+            if (camisa.liga === ligaEscolhida) {
+                vitrine.innerHTML += `
+                    <div class="card">
+                        <img src="${camisa.foto}" alt="${camisa.nome}">
+                        <h3>${camisa.nome}</h3>
+                        <p class="preco">${camisa.preco}</p>
+                        <a href="produto.html?id=${idProduto}" class="btn-detalhes">Ver Detalhes</a>
+                    </div>
+                `;
+            }
+        }
+
         const numeroWhatsApp = "5546991087501"; 
         let carrinho = JSON.parse(localStorage.getItem('carrinhoDGSports')) || [];
-
         function atualizarContagem() { document.getElementById('contagem-carrinho').innerText = carrinho.length; }
         function abrirCarrinho() { document.getElementById('carrinho-modal').style.display = 'flex'; document.getElementById('fundo-escuro').style.display = 'block'; renderizarItens(); }
         function fecharCarrinho() { document.getElementById('carrinho-modal').style.display = 'none'; document.getElementById('fundo-escuro').style.display = 'none'; }
-
         function renderizarItens() {
             let listaHTML = '';
             if(carrinho.length === 0) { listaHTML = "<p>Seu carrinho está vazio.</p>"; } 
-            else {
-                carrinho.forEach((item, index) => {
-                    listaHTML += `<div class="item-cart"><div><strong>${item.nome}</strong><br>Tamanho: ${item.tamanho}</div><div><span style="color:red; cursor:pointer;" onclick="removerItem(${index})">Remover</span></div></div>`;
-                });
-            }
+            else { carrinho.forEach((item, index) => { listaHTML += `<div class="item-cart"><div><strong>${item.nome}</strong><br>Tamanho: ${item.tamanho}</div><div><span style="color:red; cursor:pointer;" onclick="removerItem(${index})">Remover</span></div></div>`; }); }
             document.getElementById('lista-itens-carrinho').innerHTML = listaHTML;
         }
-
         function removerItem(index) { carrinho.splice(index, 1); localStorage.setItem('carrinhoDGSports', JSON.stringify(carrinho)); renderizarItens(); atualizarContagem(); }
-        
         function finalizarCompraWhatsApp() {
             if (carrinho.length === 0) { alert("Adicione camisas ao carrinho antes de finalizar!"); return; }
             let textoMensagem = "Olá, DG Sports! Gostaria de finalizar meu pedido. Aqui estão as camisas:\n\n";

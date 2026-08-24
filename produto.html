@@ -4,77 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Produto - DG Sports</title>
-    <link rel="icon" href="image.png" type="image/png">
-    <!-- COLOQUE SEU CSS AQUI DENTRO (aquele de antes, sem mudanças) -->
+    
+    <link rel="icon" href="assets/img/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/img/favicon.png">
+    
+    <!-- BIBLIOTECA DE ÍCONES (FONT AWESOME) - ISSO AQUI FALTAVA -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; } body { background-color: #f4f4f4; color: #333; } header { background-color: #fff; padding: 15px 50px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 5px rgba(0,0,0,0.1); } .logo img { height: 80px; } nav a { text-decoration: none; color: #000; font-weight: bold; margin-left: 20px; text-transform: uppercase; } .container-produto { display: flex; flex-wrap: wrap; max-width: 1000px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); gap: 40px; } .galeria { flex: 1; min-width: 300px; position: relative; display: flex; align-items: center; } .foto-principal { width: 100%; border-radius: 8px; object-fit: cover; } .seta { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 15px; cursor: pointer; font-size: 18px; border-radius: 50%; transition: 0.3s; } .seta:hover { background-color: rgba(0, 0, 0, 0.8); } .seta-esquerda { left: 10px; } .seta-direita { right: 10px; } .info { flex: 1; min-width: 300px; } .info h1 { font-size: 2em; margin-bottom: 10px; } .info .preco-grande { font-size: 2.2em; color: #27ae60; font-weight: bold; margin-bottom: 20px; } .info .descricao { line-height: 1.6; margin-bottom: 20px; color: #555; } .seletor-tamanhos { margin-bottom: 25px; } .seletor-tamanhos p { font-weight: bold; margin-bottom: 10px; } .btn-tamanho { background: #fff; border: 2px solid #ccc; padding: 10px 15px; margin-right: 10px; border-radius: 4px; cursor: pointer; font-size: 1em; font-weight: bold; transition: 0.2s; } .btn-tamanho:hover { border-color: #000; } .btn-tamanho.selecionado { background: #000; color: #fff; border-color: #000; } .btn-whatsapp { display: flex; align-items: center; justify-content: center; background-color: #25D366; color: white; text-decoration: none; padding: 15px; border-radius: 5px; font-size: 1.2em; font-weight: bold; transition: 0.3s; cursor: pointer; } .btn-whatsapp:hover { background-color: #1DA851; }
+        /* RESET E LAYOUT */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; } body { background-color: #f4f4f4; color: #333; display: flex; flex-direction: column; min-height: 100vh; } 
+        
+        /* CABEÇALHO */
+        .top-bar { background-color: #1a1aff; color: white; text-align: center; padding: 5px 0; font-size: 0.8em; } 
+        .top-bar a { color: white; text-decoration: none; margin: 0 10px; } 
+        .top-bar a i { margin-right: 5px; font-size: 1.1em; } /* Espaço no ícone */
+        
+        .header-amarelo { background-color: #e5ff00; padding: 15px 50px; display: flex; align-items: center; justify-content: space-between; } .logo img { height: 70px; } 
+        
+        /* CARRINHO */
+        .carrinho-icon { position: relative; cursor: pointer; display: flex; align-items: center; font-weight: bold; font-size: 1.2em; } .carrinho-icon span { font-size: 1.5em; margin-right: 5px; } .badge-carrinho { position: absolute; top: -5px; right: -10px; background-color: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.7em; } 
+        
+        /* MENU */
+        .menu-categorias { background-color: #e5ff00; padding: 10px 50px; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; border-bottom: 2px solid #d4ec00; } .menu-categorias a { text-decoration: none; color: #000; font-weight: bold; text-transform: uppercase; font-size: 0.85em; transition: 0.2s; } .menu-categorias a:hover { opacity: 0.6; } 
+        
+        /* CONTEÚDO DA PÁGINA DE PRODUTO */
+        .conteudo-principal { flex: 1; }
+        .container-produto { display: flex; flex-wrap: wrap; max-width: 1000px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); gap: 40px; } .galeria { flex: 1; min-width: 300px; position: relative; display: flex; align-items: center; } .foto-principal { width: 100%; border-radius: 8px; object-fit: cover; aspect-ratio: 1/1; } .seta { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 15px; cursor: pointer; font-size: 18px; border-radius: 50%; transition: 0.3s; } .seta:hover { background-color: rgba(0, 0, 0, 0.8); } .seta-esquerda { left: 10px; } .seta-direita { right: 10px; } .info { flex: 1; min-width: 300px; } .info h1 { font-size: 2em; margin-bottom: 10px; } .info .preco-grande { font-size: 2.2em; color: #27ae60; font-weight: bold; margin-bottom: 20px; } .info .descricao { line-height: 1.6; margin-bottom: 20px; color: #555; } .seletor-tamanhos { margin-bottom: 25px; } .seletor-tamanhos p { font-weight: bold; margin-bottom: 10px; } .btn-tamanho { background: #fff; border: 2px solid #ccc; padding: 10px 15px; margin-right: 10px; border-radius: 4px; cursor: pointer; font-size: 1em; font-weight: bold; transition: 0.2s; margin-bottom: 10px; } .btn-tamanho:hover { border-color: #000; } .btn-tamanho.selecionado { background: #000; color: #fff; border-color: #000; } .btn-add-carrinho { display: flex; align-items: center; justify-content: center; background-color: #000; color: white; text-decoration: none; padding: 15px; border-radius: 5px; font-size: 1.2em; font-weight: bold; transition: 0.3s; cursor: pointer; border: none; width: 100%; } .btn-add-carrinho:hover { background-color: #333; }
+        
+        /* MODAL DO CARRINHO */
+        .carrinho-modal { display: none; position: fixed; top: 0; right: 0; width: 350px; height: 100%; background: #fff; box-shadow: -2px 0 10px rgba(0,0,0,0.2); z-index: 1000; flex-direction: column; padding: 20px; } .carrinho-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 15px; } .fechar-carrinho { cursor: pointer; font-size: 1.5em; font-weight: bold; } .itens-carrinho { flex: 1; overflow-y: auto; } .item-cart { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 0.9em; border-bottom: 1px dashed #eee; padding-bottom: 10px; } .btn-whatsapp { display: block; text-align: center; background-color: #25D366; color: white; text-decoration: none; padding: 15px; font-weight: bold; border-radius: 5px; margin-top: 15px; cursor: pointer; border: none; width: 100%; font-size: 1em; } .fundo-escuro { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999; } 
+        
+        /* RODAPÉ (FOOTER) */
+        .footer { background-color: #222; color: #fff; padding: 40px 50px 20px; text-align: center; margin-top: 50px; } .footer-redes { margin-bottom: 20px; } .footer-redes a { color: #e5ff00; text-decoration: none; font-size: 1.2em; margin: 0 15px; transition: 0.3s; font-weight: bold; } .footer-redes a:hover { color: #fff; } .footer-redes a i { margin-right: 8px; } /* Espaço no ícone */ .footer-texto { margin-top: 20px; font-size: 0.9em; color: #aaa; border-top: 1px solid #444; padding-top: 20px; line-height: 1.5; }
+        
+        /* REGRAS PARA CELULAR AQUI TAMBÉM */
+        @media (max-width: 768px) {
+            .header-amarelo { flex-direction: column; padding: 15px 20px; gap: 15px; }
+            .menu-categorias { padding: 10px 15px; gap: 10px; }
+            .menu-categorias a { font-size: 0.75em; }
+            .container-produto { margin: 20px; padding: 15px; flex-direction: column; gap: 20px;}
+            .info h1 { font-size: 1.5em; }
+            .carrinho-modal { width: 100%; }
+            .footer { padding: 30px 20px; }
+            .footer-redes a { display: inline-block; margin: 10px; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo"><a href="index.html"><img src="image.png" alt="Logo DG Sports"></a></div>
-        <nav><a href="index.html">Voltar para a Loja</a></nav>
+
+    <div class="top-bar">
+        <a href="https://www.instagram.com/dgsportsbrasil?igsi=MWloN3ltY3N1c2pvag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | 
+        <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a> | 
+        <a href="https://wa.me/5546991087501" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+    
+    <header class="header-amarelo">
+        <div class="logo"><a href="index.html"><img src="assets/img/logo DGsports.png" alt="Logo DG Sports"></a></div>
+        <div class="carrinho-icon" onclick="abrirCarrinho()"><span>🛒</span><div class="badge-carrinho" id="contagem-carrinho">0</div></div>
     </header>
 
-    <div class="container-produto">
-        <!-- GALERIA -->
-        <div class="galeria">
-            <button class="seta seta-esquerda" onclick="mudarFoto(-1)">&#10094;</button>
-            <img id="foto-atual" src="" class="foto-principal">
-            <button class="seta seta-direita" onclick="mudarFoto(1)">&#10095;</button>
-        </div>
-        <!-- INFORMAÇÕES -->
-        <div class="info">
-            <h1 id="nome-produto">Carregando...</h1>
-            <p class="preco-grande" id="preco-produto">R$ 0,00</p>
-            <p class="descricao" id="desc-produto">Carregando descrição...</p>
-            
-            <div class="seletor-tamanhos">
-                <p>Escolha o Tamanho:</p>
-                <button class="btn-tamanho" onclick="selecionarTamanho(this, 'P')">P</button>
-                <button class="btn-tamanho" onclick="selecionarTamanho(this, 'M')">M</button>
-                <button class="btn-tamanho" onclick="selecionarTamanho(this, 'G')">G</button>
-                <button class="btn-tamanho" onclick="selecionarTamanho(this, 'GG')">GG</button>
+    <div class="menu-categorias">
+        <a href="index.html">Início</a>
+        <a href="liga.html?liga=laliga">La Liga</a>
+        <a href="liga.html?liga=premier">Premier League</a>
+        <a href="liga.html?liga=brasileirao">Brasileirão</a>
+    </div>
+
+    <div class="conteudo-principal">
+        <div class="container-produto">
+            <div class="galeria">
+                <button class="seta seta-esquerda" onclick="mudarFoto(-1)">&#10094;</button>
+                <img id="foto-atual" src="" class="foto-principal">
+                <button class="seta seta-direita" onclick="mudarFoto(1)">&#10095;</button>
             </div>
             
-            <a id="link-whatsapp" href="#" class="btn-whatsapp">🛒 Comprar pelo WhatsApp</a>
+            <div class="info">
+                <h1 id="nome-produto">Carregando...</h1>
+                <p class="preco-grande" id="preco-produto">R$ 0,00</p>
+                <p class="descricao" id="desc-produto">Carregando descrição...</p>
+                
+                <div class="seletor-tamanhos">
+                    <p>Escolha o Tamanho:</p>
+                    <button class="btn-tamanho" onclick="selecionarTamanho(this, 'P')">P</button>
+                    <button class="btn-tamanho" onclick="selecionarTamanho(this, 'M')">M</button>
+                    <button class="btn-tamanho" onclick="selecionarTamanho(this, 'G')">G</button>
+                    <button class="btn-tamanho" onclick="selecionarTamanho(this, 'GG')">GG</button>
+                </div>
+                
+                <button id="btn-adicionar" class="btn-add-carrinho">Adicionar ao Carrinho 🛒</button>
+            </div>
         </div>
     </div>
 
+    <footer class="footer">
+        <div class="footer-redes">
+            <a href="https://www.instagram.com/dgsportsbrasil?igsi=MWloN3ltY3N1c2pvag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="https://wa.me/5546991087501" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div class="footer-texto">
+            <p>&copy; 2026 DG Sports - Todos os direitos reservados.</p>
+            <p>Pato Branco, Paraná - PR</p>
+        </div>
+    </footer>
+
+    <!-- CARRINHO E JS (MANTIDOS IGUAIS) -->
+    <div class="fundo-escuro" id="fundo-escuro" onclick="fecharCarrinho()"></div>
+    <div class="carrinho-modal" id="carrinho-modal">
+        <div class="carrinho-header"><h2>Seu Carrinho</h2><span class="fechar-carrinho" onclick="fecharCarrinho()">X</span></div>
+        <div class="itens-carrinho" id="lista-itens-carrinho"></div>
+        <button class="btn-whatsapp" onclick="finalizarCompraWhatsApp()">🛒 Enviar Pedido no WhatsApp</button>
+    </div>
+
     <script>
-        // --- 1. O SEU "BANCO DE DADOS" DE CAMISAS ---
-        // Toda vez que adicionar uma camisa nova, coloque ela aqui dentro!
         const catalogo = {
-            "real1": {
-                nome: "Camisa Real Madrid I Branca",
-                preco: "R$ 149,90",
-                descricao: "Qualidade premium. Tecido leve e confortável. Símbolo bordado de alta qualidade.",
-                fotos: ["assets/img/real madrid/real madrid frente.jpg", "assets/img/real madrid/real madrid costas.jpg"]
-            },
-            "atletico1": {
-                nome: "Camisa Atlético de Madrid I",
-                preco: "R$ 149,90",
-                descricao: "Camisa listrada clássica do Atlético. Qualidade tailandesa 1:1, perfeita para o dia a dia.",
-                fotos: ["   ", "atletico madrid costas.jpg"]
-            },
-            "inter1": {
-                nome: "Camisa Inter I",
-                preco: "R$ 149,90",
-                descricao: "Camisa oficial do Inter de Milão. Qualidade premium, perfeita para o dia a dia.",
-                fotos: ["assets/img/inter/inter frente.jpg", "assets/img/inter/inter costas.jpg"]
-            }
-            // Quando quiser colocar mais, é só seguir esse modelo separando por vírgula!
+            "real1": { liga: "laliga", nome: "Camisa Real Madrid I Branca", preco: "R$ 149,90", descricao: "Qualidade premium. Tecido leve e confortável.", fotos: ["assets/img/real madrid/real madrid frente.jpg", "assets/img/real madrid/real madrid costas.jpg"] },
+            "atletico1": { liga: "laliga", nome: "Camisa Atlético de Madrid I", preco: "R$ 149,90", descricao: "Camisa listrada clássica do Atlético.", fotos: ["assets/img/atletico madrid/atletico madrid frente.png", "assets/img/atletico madrid/atletico madrid costas.png"] },
+            "flamengo1": { liga: "brasileirao", nome: "Camisa Flamengo I", preco: "R$ 149,90", descricao: "Camisa oficial do Flamengo.", fotos: ["assets/img/flamengo/flamengo frente.jpg", "assets/img/flamengo/flamengo costas.jpg"] },
+            "brasil1": { liga: "copa do mundo", nome: "Camisa Brasil 2026 I", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Brasileira para a Copa do Mundo 2026.", fotos: ["assets/img/brasil/brasil frente.jpg", "assets/img/brasil/brasil costas.jpg"] }
         };
 
-        // --- 2. LÓGICA PARA LER A URL E PREENCHER A TELA ---
-        // Pega o "?id=nome" da barra de endereço
         const urlParams = new URLSearchParams(window.location.search);
         const idDoProduto = urlParams.get('id');
-        
-        // Puxa as informações do banco de dados lá de cima
         const produtoEscolhido = catalogo[idDoProduto];
 
-        // Se o produto existir no nosso catálogo, a gente preenche a tela
         let listaDeFotos = [];
         let fotoIndex = 0;
 
@@ -82,28 +137,21 @@
             document.getElementById("nome-produto").innerText = produtoEscolhido.nome;
             document.getElementById("preco-produto").innerText = produtoEscolhido.preco;
             document.getElementById("desc-produto").innerText = produtoEscolhido.descricao;
-            
-            // Configura as fotos daquele produto
             listaDeFotos = produtoEscolhido.fotos;
-            document.getElementById("foto-atual").src = listaDeFotos[0]; // Mostra a 1ª foto
+            document.getElementById("foto-atual").src = listaDeFotos[0];
         } else {
-            // Se alguém digitar um link errado
             document.getElementById("nome-produto").innerText = "Produto não encontrado";
         }
 
-        // --- 3. LÓGICA DE PASSAR FOTOS ---
         function mudarFoto(direcao) {
-            if (listaDeFotos.length === 0) return; // Segurança
+            if (listaDeFotos.length === 0) return;
             fotoIndex += direcao;
             if (fotoIndex >= listaDeFotos.length) fotoIndex = 0;
             if (fotoIndex < 0) fotoIndex = listaDeFotos.length - 1;
             document.getElementById("foto-atual").src = listaDeFotos[fotoIndex];
         }
 
-        // --- 4. LÓGICA DO WHATSAPP ---
-        const meuNumeroWhatsApp = "5546991087501"; 
         let tamanhoEscolhido = "";
-
         function selecionarTamanho(botaoClicado, tamanho) {
             let botoes = document.querySelectorAll('.btn-tamanho');
             botoes.forEach(b => b.classList.remove('selecionado'));
@@ -111,17 +159,39 @@
             tamanhoEscolhido = tamanho;
         }
 
-        document.getElementById('link-whatsapp').addEventListener('click', function(event) {
-            if (tamanhoEscolhido === "") {
-                event.preventDefault();
-                alert("Por favor, selecione um tamanho antes de comprar!");
-                return;
-            }
-            let nomeFinal = produtoEscolhido ? produtoEscolhido.nome : "Camisa";
-            let mensagem = `Olá, DG Sports! Gostaria de comprar a *${nomeFinal}*. O tamanho que eu quero é o *${tamanhoEscolhido}*.`;
-            let urlFinal = `https://wa.me/${meuNumeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-            window.open(urlFinal, '_blank');
+        const numeroWhatsApp = "5546991087501"; 
+        let carrinho = JSON.parse(localStorage.getItem('carrinhoDGSports')) || [];
+
+        function atualizarContagem() { document.getElementById('contagem-carrinho').innerText = carrinho.length; }
+        function abrirCarrinho() { document.getElementById('carrinho-modal').style.display = 'flex'; document.getElementById('fundo-escuro').style.display = 'block'; renderizarItens(); }
+        function fecharCarrinho() { document.getElementById('carrinho-modal').style.display = 'none'; document.getElementById('fundo-escuro').style.display = 'none'; }
+
+        function renderizarItens() {
+            let listaHTML = '';
+            if(carrinho.length === 0) { listaHTML = "<p>Seu carrinho está vazio.</p>"; } 
+            else { carrinho.forEach((item, index) => { listaHTML += `<div class="item-cart"><div><strong>${item.nome}</strong><br>Tamanho: ${item.tamanho}</div><div><span style="color:red; cursor:pointer;" onclick="removerItem(${index})">Remover</span></div></div>`; }); }
+            document.getElementById('lista-itens-carrinho').innerHTML = listaHTML;
+        }
+
+        function removerItem(index) { carrinho.splice(index, 1); localStorage.setItem('carrinhoDGSports', JSON.stringify(carrinho)); renderizarItens(); atualizarContagem(); }
+
+        document.getElementById('btn-adicionar').addEventListener('click', function(event) {
+            event.preventDefault();
+            if (tamanhoEscolhido === "") { alert("Por favor, selecione um tamanho antes de adicionar ao carrinho!"); return; }
+            carrinho.push({ id: idDoProduto, nome: produtoEscolhido.nome, preco: produtoEscolhido.preco, tamanho: tamanhoEscolhido });
+            localStorage.setItem('carrinhoDGSports', JSON.stringify(carrinho));
+            atualizarContagem();
+            abrirCarrinho();
         });
+
+        function finalizarCompraWhatsApp() {
+            if (carrinho.length === 0) { alert("Adicione camisas ao carrinho antes de finalizar!"); return; }
+            let textoMensagem = "Olá, DG Sports! Gostaria de finalizar meu pedido. Aqui estão as camisas:\n\n";
+            carrinho.forEach((item, index) => { textoMensagem += `${index + 1}. *${item.nome}* (Tamanho: ${item.tamanho})\n`; });
+            textoMensagem += "\nComo faço para realizar o pagamento?";
+            window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoMensagem)}`, '_blank');
+        }
+        atualizarContagem();
     </script>
 </body>
 </html>
