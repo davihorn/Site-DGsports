@@ -100,7 +100,7 @@
         <a href="liga.html?liga=ligue 1">Ligue 1</a>
         <a href="liga.html?liga=serie a">Serie A</a>
         <a href="liga.html?liga=bundesliga">Bundesliga</a>
-        <a href="liga.html?liga=resto do mundo">Resto do Mundo</a>
+        <a href="liga.html?liga=retro">Rêtro</a>
     </div>
 
     <div class="conteudo-principal">
@@ -127,12 +127,29 @@
 
     <script>
         const catalogo = {
-            "real1": { liga: "laliga", nome: "Camisa Real Madrid I Branca", preco: "R$ 149,90", foto: "assets/img/real madrid/real madrid frente.jpg" },
-            "atletico1": { liga: "laliga", nome: "Camisa Atlético de Madrid I", preco: "R$ 149,90", foto: "assets/img/atletico madrid/atletico madrid frente.png" },
-            "flamengo1": { liga: "brasileirao", nome: "Camisa Flamengo I", preco: "R$ 149,90", foto: "assets/img/flamengo/flamengo frente.jpg" },
-            "brasil1": { liga: "copa do mundo", nome: "Camisa Brasil 2026 I Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Brasileira para a Copa do Mundo 2026.", foto: "assets/img/brasil/brasil I frente.jpg" },
-            "brasil2": { liga: "copa do mundo", nome: "Camisa Brasil 2026 II Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Brasileira para a Copa do Mundo 2026.", foto: "assets/img/brasil/brasil II frente.jpg" }
-
+            "real1": { liga: "laliga", nome: "Camisa Real Madrid I 2021/2022 Branca", preco: "R$ 219,90", foto: "assets/img/la liga/real madrid frente.jpg" },
+            "atletico1": { liga: "laliga", nome: "Camisa Atlético de Madrid I 2024/2025", preco: "R$ 299,90", foto: "assets/img/la liga/atletico madrid frente.png" },
+            "flamengo1": { liga: "brasileirao", nome: "Camisa Flamengo I 2026/2027", preco: "R$ 219,90", foto: "assets/img/brasileirao/flamengo 26-27 frente.jpg" },
+            "brasil1": { liga: "copa do mundo", nome: "Camisa Brasil 2026 I Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Brasileira para a Copa do Mundo 2026.", foto: "assets/img/copa/brasil I frente.jpg" },
+            "brasil2": { liga: "copa do mundo", nome: "Camisa Brasil 2026 II Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Brasileira para a Copa do Mundo 2026.", foto: "assets/img/copa/brasil II frente.jpg" },
+            "espanha2": { liga: "copa do mundo", nome: "Camisa Espanha 2026 II Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Espanhola para a Copa do Mundo 2026.", foto: "assets/img/copa/espanha frente II 2026.jpg" },
+            "espanha1": { liga: "copa do mundo", nome: "Camisa Espanha 2026 I Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Espanhola para a Copa do Mundo 2026.", foto: "assets/img/copa/espanha frente I 2026.jpg" },
+            "barcelona1": { liga: "retro", nome: "Camisa Barcelona Retro 2017/2018", preco: "R$ 339,90", foto: "assets/img/retro/barcelona retro frente 17-18.jpg" },
+            "barcelona2": { liga: "retro", nome: "Camisa Barcelona 2014/2015", preco: "R$ 339,90", foto: "assets/img/retro/Retro Barcelona 14-15 frente.jpg" },
+            "barcelona3": { liga: "retro", nome: "Camisa Barcelona 2015/2016", preco: "R$ 339,90", foto: "assets/img/retro/Barcelona retro 15-16 frente.jpg" },
+            "palmeiras1": { liga: "brasileirao", nome: "Camisa Palmeiras I 26/27 ", preco: "R$ 219,90", foto: "assets/img/brasileirao/palmeiras 26-27 frente.jpg" },
+            "real2": { liga: "laliga", nome: "Camisa Real Madrid II Azul", preco: "R$ 149,90", foto: "assets/img/la liga/real madrid frente azul.jpg" },
+            "internacional1": { liga: "brasileirao", nome: "Camisa Internacional I 26/27", preco: "R$ 219,90", foto: "assets/img/brasileirao/internacional 26-27 frente.jpg" },
+            "internacional2": { liga: "brasileirao", nome: "Camisa Internacional II 25/26 Black", preco: "R$ 219,90", foto: "assets/img/brasileirao/internacional 25-26 frente.jpg" },
+            "internacional3": { liga: "brasileirao", nome: "Camisa Internacional II 26/27", preco: "R$ 219,90", foto: "assets/img/brasileirao/internacional 2 26-27 frente.jpg" },
+            "gremio1": { liga: "brasileirao", nome: "Camisa Grêmio II 25/26", preco: "R$ 219,90", foto: "assets/img/brasileirao/gremio 2 25-26 frente.jpg" }
+            
+        
+        
+        
+        
+        
+        
         };
 
         const urlParams = new URLSearchParams(window.location.search);
