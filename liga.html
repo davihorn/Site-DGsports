@@ -58,6 +58,31 @@
         .btn-whatsapp { display: block; text-align: center; background-color: #25D366; color: white; text-decoration: none; padding: 15px; font-weight: bold; border-radius: 5px; margin-top: 15px; cursor: pointer; border: none; width: 100%; font-size: 1em; }
         .fundo-escuro { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999; }
 
+        .whatsapp-btn {
+  position: fixed;
+  bottom: 20px;            /* Distância do canto inferior */
+  left: 20px;             /* Distância do canto direito */
+  width: 55px;             /* Largura do botão */
+  height: 55px;            /* Altura do botão */
+  background-color: #25d366; /* Verde oficial do WhatsApp */
+  color: #ffffff;          /* Cor do ícone */
+  border-radius: 50%;      /* Deixa o botão redondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;         /* Tamanho do ícone */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25); /* Sombra suave */
+  text-decoration: none;
+  z-index: 9999;           /* Garante que fique por cima de tudo no site */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Efeito ao passar o mouse */
+.whatsapp-btn:hover {
+  background-color: #20ba5a;
+  transform: scale(1.1);
+}
+
         /* RODAPÉ (FOOTER) */
         .footer { background-color: #222; color: #fff; padding: 40px 50px 20px; text-align: center; margin-top: 50px; }
         .footer-redes { margin-bottom: 20px; }
@@ -80,6 +105,14 @@
 </head>
 <body>
 
+    <!-- FontAwesome para carregar o ícone oficial do WhatsApp -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Botão Flutuante do WhatsApp -->
+<a href="https://wa.me/5546991087501" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
     <div class="top-bar">
         <a href="https://www.instagram.com/dgsportsbrasil?igsi=MWloN3ltY3N1c2pvag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | 
         <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a> | 
@@ -93,14 +126,14 @@
 
     <div class="menu-categorias">
         <a href="index.html">Início</a>
-        <a href="liga.html?liga=laliga">La Liga</a>
+        <a href="liga.html?liga=retro">Rêtro</a>
+        <a href="liga.html?liga=la liga">La Liga</a>
         <a href="liga.html?liga=premier">Premier League</a>
         <a href="liga.html?liga=brasileirao">Brasileirão</a>
         <a href="liga.html?liga=copa do mundo">2026 FIFA World Cup</a>
         <a href="liga.html?liga=ligue 1">Ligue 1</a>
         <a href="liga.html?liga=serie a">Serie A</a>
         <a href="liga.html?liga=bundesliga">Bundesliga</a>
-        <a href="liga.html?liga=retro">Rêtro</a>
     </div>
 
     <div class="conteudo-principal">
@@ -127,27 +160,29 @@
 
     <script>
         const catalogo = {
-            "real1": { liga: "laliga", nome: "Camisa Real Madrid I 2021/2022 Branca", preco: "R$ 219,90", foto: "assets/img/la liga/real madrid frente.jpg" },
-            "atletico1": { liga: "laliga", nome: "Camisa Atlético de Madrid I 2024/2025", preco: "R$ 299,90", foto: "assets/img/la liga/atletico madrid frente.png" },
+            "real1": { liga: "la liga", nome: "Camisa Real Madrid I 2021/2022 Branca", preco: "R$ 219,90", foto: "assets/img/la liga/real madrid frente.jpg" },
+            "atletico1": { liga: "la liga", nome: "Camisa Atlético de Madrid I 2024/2025", preco: "R$ 299,90", foto: "assets/img/la liga/atletico madrid frente.png" },
             "flamengo1": { liga: "brasileirao", nome: "Camisa Flamengo I 2026/2027", preco: "R$ 219,90", foto: "assets/img/brasileirao/flamengo 26-27 frente.jpg" },
             "brasil1": { liga: "copa do mundo", nome: "Camisa Brasil 2026 I Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Brasileira para a Copa do Mundo 2026.", foto: "assets/img/copa/brasil I frente.jpg" },
             "brasil2": { liga: "copa do mundo", nome: "Camisa Brasil 2026 II Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Brasileira para a Copa do Mundo 2026.", foto: "assets/img/copa/brasil II frente.jpg" },
             "espanha2": { liga: "copa do mundo", nome: "Camisa Espanha 2026 II Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Espanhola para a Copa do Mundo 2026.", foto: "assets/img/copa/espanha frente II 2026.jpg" },
-            "espanha1": { liga: "copa do mundo", nome: "Camisa Espanha 2026 I Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Espanhola para a Copa do Mundo 2026.", foto: "assets/img/copa/espanha frente I 2026.jpg" },
+            "espanha1": { liga: "copa do mundo", nome: "Camisa Espanha 2026 I Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Espanhola para a Copa do Mundo ２０２６.", foto: "assets/img/copa/espanha frente I ２０２６.jpg" },
             "barcelona1": { liga: "retro", nome: "Camisa Barcelona Retro 2017/2018", preco: "R$ 339,90", foto: "assets/img/retro/barcelona retro frente 17-18.jpg" },
             "barcelona2": { liga: "retro", nome: "Camisa Barcelona 2014/2015", preco: "R$ 339,90", foto: "assets/img/retro/Retro Barcelona 14-15 frente.jpg" },
             "barcelona3": { liga: "retro", nome: "Camisa Barcelona 2015/2016", preco: "R$ 339,90", foto: "assets/img/retro/barcelona retro 15-16 frente.jpg" },
             "palmeiras1": { liga: "brasileirao", nome: "Camisa Palmeiras I 26/27 ", preco: "R$ 219,90", foto: "assets/img/brasileirao/palmeiras 26-27 frente.jpg" },
-            //"real2": { liga: "laliga", nome: "Camisa Real Madrid II Azul", preco: "R$ 149,90", foto: "assets/img/la liga/real madrid frente azul.jpg" },
+            "barcelona6": { liga: "la liga", nome: "Camisa Barcelona II 2024/2025", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona 2024-25 II frente.jpg" },
             "internacional1": { liga: "brasileirao", nome: "Camisa Internacional I 26/27", preco: "R$ 219,90", foto: "assets/img/brasileirao/internacional 26-27 frente.jpg" },
             "internacional2": { liga: "brasileirao", nome: "Camisa Internacional II 25/26 Black", preco: "R$ 219,90", foto: "assets/img/brasileirao/internacional 25-26 frente.jpg" },
             "internacional3": { liga: "brasileirao", nome: "Camisa Internacional II 26/27", preco: "R$ 219,90", foto: "assets/img/brasileirao/internacional 2 26-27 frente.jpg" },
-            "gremio1": { liga: "brasileirao", nome: "Camisa Grêmio II 25/26", preco: "R$ 219,90", foto: "assets/img/brasileirao/Gremio 2 25-26 frente.jpg" }
-            
-        
-        
-        
-        
+            "gremio1": { liga: "brasileirao", nome: "Camisa Grêmio II 25/26", preco: "R$ 219,90", foto: "assets/img/brasileirao/Gremio 2 25-26 frente.jpg" },
+            "barcelona4": { liga: "la liga", nome: "Camisa Barcelona II 2026/2027 ", preco: "R$ 219,90", foto: "assets/img/la liga/Barcelona 2026-27 frente.jpg" },
+            "barcelona5": { liga: "la liga", nome: "Camisa Barcelona I 2025/2026 ", preco: "R$ 219,90", foto: "assets/img/la liga/Barcelona 2025-26 frente.jpg" },
+            "barcelona7": { liga: "la liga", nome: "Camisa Barcelona II 2024/2025", preco: "R$ 219,90", foto: "assets/img/la liga/Barcelona 2024-25 I frente.jpg" },
+            "barcelona8": { liga: "la liga", nome: "Camisa Barcelona II 2025/2026", preco: "R$ 219,90", foto: "assets/img/la liga/Barcelona 2025-26 II frente.jpg" },
+            "barcelona9": { liga: "la liga", nome: "Camisa Barcelona III 2025/2026", preco: "R$ 219,90", foto: "assets/img/la liga/Barcelona 2025-26 III frente.jpg" },
+            "barcelona10": { liga: "retro", nome: "Camisa Barcelona Retro 20/21", preco: "R$ 299,90", foto: "assets/img/retro/retro 20-21 Barcelona frente.jpg" },
+            "barcelona11": { liga: "la liga", nome: "Camisa Barcelona Edição Especial 2024/2025", preco: "R$ 219,90", foto: "assets/img/la liga/Barcelona 2024-25 edição especial frente.jpg" },
         
         
         };

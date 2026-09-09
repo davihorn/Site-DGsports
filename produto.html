@@ -39,6 +39,31 @@
         /* RODAPÉ (FOOTER) */
         .footer { background-color: #222; color: #fff; padding: 40px 50px 20px; text-align: center; margin-top: 50px; } .footer-redes { margin-bottom: 20px; } .footer-redes a { color: #e5ff00; text-decoration: none; font-size: 1.2em; margin: 0 15px; transition: 0.3s; font-weight: bold; } .footer-redes a:hover { color: #fff; } .footer-redes a i { margin-right: 8px; } /* Espaço no ícone */ .footer-texto { margin-top: 20px; font-size: 0.9em; color: #aaa; border-top: 1px solid #444; padding-top: 20px; line-height: 1.5; }
         
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;            /* Distância do canto inferior */
+  left: 20px;             /* Distância do canto direito */
+  width: 55px;             /* Largura do botão */
+  height: 55px;            /* Altura do botão */
+  background-color: #25d366; /* Verde oficial do WhatsApp */
+  color: #ffffff;          /* Cor do ícone */
+  border-radius: 50%;      /* Deixa o botão redondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;         /* Tamanho do ícone */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25); /* Sombra suave */
+  text-decoration: none;
+  z-index: 9999;           /* Garante que fique por cima de tudo no site */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Efeito ao passar o mouse */
+.whatsapp-btn:hover {
+  background-color: #20ba5a;
+  transform: scale(1.1);
+}
+
         /* REGRAS PARA CELULAR AQUI TAMBÉM */
         @media (max-width: 768px) {
             .header-amarelo { flex-direction: column; padding: 15px 20px; gap: 15px; }
@@ -54,6 +79,14 @@
 </head>
 <body>
 
+    <!-- FontAwesome para carregar o ícone oficial do WhatsApp -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Botão Flutuante do WhatsApp -->
+<a href="https://wa.me/5546991087501" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
     <div class="top-bar">
         <a href="https://www.instagram.com/dgsportsbrasil?igsi=MWloN3ltY3N1c2pvag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | 
         <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a> | 
@@ -67,6 +100,7 @@
 
     <div class="menu-categorias">
         <a href="index.html">Início</a>
+        <a href="liga.html?liga=retro">Rêtro</a>
         <a href="liga.html?liga=laliga">La Liga</a>
         <a href="liga.html?liga=premier">Premier League</a>
         <a href="liga.html?liga=brasileirao">Brasileirão</a>
@@ -74,7 +108,6 @@
         <a href="liga.html?liga=ligue 1">Ligue 1</a>
         <a href="liga.html?liga=serie a">Serie A</a>
         <a href="liga.html?liga=bundesliga">Bundesliga</a>
-        <a href="liga.html?liga=retro">Rêtro</a>
     </div>
 
     <div class="conteudo-principal">
@@ -126,7 +159,7 @@
     <script>
         const catalogo = {
             "real1": { liga: "laliga", nome: "Camisa Real Madrid I 2021/2022 Branca", preco: "R$ 219,90", descricao: "Qualidade premium. Tecido leve e confortável.", fotos: ["assets/img/la liga/real madrid frente.jpg", "assets/img/la liga/real madrid costas.jpg"] },
-            "atletico1": { liga: "laliga", nome: "Camisa Atlético de Madrid I 24/25", preco: "R$ 299,90", descricao: "Camisa listrada clássica do Atlético.", fotos: ["assets/img/la liga/atletico madrid frente.png", "assets/img/la liga/atletico madrid costas.png"] },
+            "atletico1": { liga: "laliga", nome: "Camisa Atlético de Madrid I 24/25 Versão Jogador", preco: "R$ 299,90", descricao: "Camisa listrada clássica do Atlético.", fotos: ["assets/img/la liga/atletico madrid frente.png", "assets/img/la liga/atletico madrid costas.png"] },
             "flamengo1": { liga: "brasileirao", nome: "Camisa Flamengo I 2026/2027", preco: "R$ 219,90", descricao: "Camisa oficial do Flamengo.", fotos: ["assets/img/brasileirao/flamengo 26-27 frente.jpg", "assets/img/brasileirao/flamengo 26-27 costas.jpg"] },
             "brasil1": { liga: "copa do mundo", nome: "Camisa Brasil 2026 I Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Brasileira para a Copa do Mundo 2026.", fotos: ["assets/img/copa/brasil I frente.jpg", "assets/img/copa/brasil I costas.jpg"] },
             "brasil2": { liga: "copa do mundo", nome: "Camisa Brasil 2026 II Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Brasileira para a Copa do Mundo 2026.", fotos: ["assets/img/copa/brasil II frente.jpg", "assets/img/copa/brasil II costas.jpg"] },
@@ -134,15 +167,21 @@
             "espanha2": { liga: "copa do mundo", nome: "Camisa Espanha 2026 II Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Espanhola para a Copa do Mundo 2026.", fotos: ["assets/img/copa/espanha frente II 2026.jpg", "assets/img/copa/espanha costas II 2026.jpg"] },
             "barcelona2": { liga: "retro", nome: "Camisa Barcelona 2014/2015", preco: "R$ 339,90", descricao: "Camisa retro do Barcelona, Personalização a parte.", fotos: ["assets/img/retro/Retro Barcelona 14-15 frente.jpg", "assets/img/retro/Retro Barcelona 14-15 costas.jpg"] },
             "barcelona3": { liga: "retro", nome: "Camisa Barcelona 2015/2016", preco: "R$ 339,90", descricao: "Camisa retro do Barcelona, Personalização a parte.", fotos: ["assets/img/retro/barcelona retro 15-16 frente.jpg", "assets/img/retro/barcelona retro 15-16 costas.jpg"] },
+            "barcelona4": { liga: "laliga", nome: "Camisa Barcelona II 2026/2027 ", preco: "R$ 219,90", descricao: "Camisa oficial do Barcelona.", fotos: ["assets/img/la liga/Barcelona 2026-27 frente.jpg", "assets/img/la liga/Barcelona 2026-27 costas.jpg"] },
             "palmeiras1": { liga: "brasileirao", nome: "Camisa Palmeiras I 26/27 Versão Jogador", preco: "R$ 219,90", descricao: "Camisa oficial do Palmeiras.", fotos: ["assets/img/brasileirao/palmeiras 26-27 frente.jpg", "assets/img/brasileirao/palmeiras 26-27 costas.jpg"] },
             "barcelona1": { liga: "retro", nome: "Camisa Barcelona Retro 2017/2018", preco: "R$ 339,90", descricao: "Camisa retro do Barcelona, Personalização a parte.", fotos: ["assets/img/retro/barcelona retro frente 17-18.jpg", "assets/img/retro/barcelona retro costas 17-18.jpg", "assets/img/retro/Barcelona Retro 17-18.png"] },
             "internacional1": { liga: "brasileirao", nome: "Camisa Internacional I 26/27  ", preco: "R$ 219,90", descricao: "Camisa oficial do Internacional.", fotos: ["assets/img/brasileirao/internacional 26-27 frente.jpg", "assets/img/brasileirao/internacional 26-27 costas.jpg"] },
             "internacional2": { liga: "brasileirao", nome: "Camisa Internacional II 25/26 Black ", preco: "R$ 219,90", descricao: "Camisa oficial do Internacional.", fotos: ["assets/img/brasileirao/internacional 25-26 frente.jpg", "assets/img/brasileirao/internacional 25-26 costas.jpg"] },
             "internacional3": { liga: "brasileirao", nome: "Camisa Internacional II 26/27  ", preco: "R$ 219,90", descricao: "Camisa oficial do Internacional.", fotos: ["assets/img/brasileirao/internacional 2 26-27 frente.jpg", "assets/img/brasileirao/internacional 2 26-27 costas.jpg"] },
-            "gremio1": { liga: "brasileirao", nome: "Camisa Grêmio II 25/26", preco: "R$ 219,90", descricao: "Camisa oficial do Grêmio.", fotos: ["assets/img/brasileirao/Gremio 2 25-26 frente.jpg", "assets/img/brasileirao/Gremio 2 25-26 costas.jpg"] }
-        
-        
-        
+            "gremio1": { liga: "brasileirao", nome: "Camisa Grêmio II 25/26", preco: "R$ 219,90", descricao: "Camisa oficial do Grêmio.", fotos: ["assets/img/brasileirao/gremio 2 25-26 frente.jpg", "assets/img/brasileirao/Gremio 2 25-26 costas.jpg"] },
+            "barcelona5": { liga: "laliga", nome: "Camisa Barcelona I 2025/2026 ", preco: "R$ 219,90", descricao: "Camisa oficial do Barcelona.", fotos: ["assets/img/la liga/Barcelona 2025-26 frente.jpg", "assets/img/la liga/Barcelona 2025-26 costas.jpg"] },
+            "barcelona6": { liga: "laliga", nome: "Camisa Barcelona II 2024/2025", preco: "R$ 219,90", descricao: "Camisa oficial do Barcelona.", fotos: ["assets/img/la liga/Barcelona 2024-25 II frente.jpg", "assets/img/la liga/Barcelona 2024-25 II costas.jpg"] },
+            "barcelona7": { liga: "laliga", nome: "Camisa Barcelona I 2024/2025", preco: "R$ 219,90", descricao: "Camisa oficial do Barcelona.", fotos: ["assets/img/la liga/Barcelona 2024-25 I frente.jpg", "assets/img/la liga/Barcelona 2024-25 I costas.jpg"] },
+            "barcelona8": { liga: "laliga", nome: "Camisa Barcelona II 2025/2026", preco: "R$ 219,90", descricao: "Camisa oficial do Barcelona.", fotos: ["assets/img/la liga/Barcelona 2025-26 II frente.jpg", "assets/img/la liga/Barcelona 2025-26 II costas.jpg"] },
+            "barcelona9": { liga: "laliga", nome: "Camisa Barcelona III 2023/2024", preco: "R$ 219,90", descricao: "Camisa oficial do Barcelona.", fotos: ["assets/img/la liga/Barcelona 2025-26 III frente.jpg", "assets/img/la liga/Barcelona 2025-26 III costas.jpg"] },
+            "barcelona10": { liga: "retro", nome: "Camisa Barcelona Retro 20/21", preco: "R$ 299,90", descricao: "Camisa retro do Barcelona.", fotos: ["assets/img/retro/retro 20-21 Barcelona frente.jpg", "assets/img/retro/retro 20-21 Barcelona costas.jpg"] },
+            "barcelona11": { liga: "la liga", nome: "Camisa Barcelona Edição Especial 2024/2025", preco: "R$ 219,90", descricao: "Camisa oficial do Barcelona.", fotos: ["assets/img/la liga/Barcelona 2024-25 edição especial frente.jpg", "assets/img/la liga/Barcelona 2024-25 edição especial costas.jpg"] },
+
         };
 
         const urlParams = new URLSearchParams(window.location.search);

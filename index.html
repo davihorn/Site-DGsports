@@ -60,6 +60,29 @@
         .btn-whatsapp { display: block; text-align: center; background-color: #25D366; color: white; text-decoration: none; padding: 15px; font-weight: bold; border-radius: 5px; margin-top: 15px; cursor: pointer; border: none; width: 100%; font-size: 1em; }
         .fundo-escuro { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999; }
 
+        .whatsapp-btn {
+        position: fixed;
+        bottom: 20px;            /* Distância do canto inferior */
+        left: 20px;             /* Distância do canto direito */
+        width: 55px;             /* Largura do botão */
+        height: 55px;            /* Altura do botão */
+        background-color: #25d366; /* Verde oficial do WhatsApp */
+        color: #ffffff;          /* Cor do ícone */
+        border-radius: 50%;      /* Deixa o botão redondo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;         /* Tamanho do ícone */
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25); /* Sombra suave */
+        text-decoration: none;
+        z-index: 9999;           /* Garante que fique por cima de tudo no site */
+        transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        /* Efeito ao passar o mouse */
+        .whatsapp-btn:hover {
+        background-color: #20ba5a;
+        transform: scale(1.1);
+        }
         /* RODAPÉ (FOOTER) */
         .footer { background-color: #222; color: #fff; padding: 40px 50px 20px; text-align: center; margin-top: 50px; }
         .footer-redes { margin-bottom: 20px; }
@@ -82,6 +105,14 @@
 </head>
 <body>
 
+    <!-- FontAwesome para carregar o ícone oficial do WhatsApp -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Botão Flutuante do WhatsApp -->
+<a href="https://wa.me/5546991087501" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
     <div class="top-bar">
         <a href="https://www.instagram.com/dgsportsbrasil?igsi=MWloN3ltY3N1c2pvag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | 
         <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a> |
@@ -96,14 +127,14 @@
     <!-- MENU POR LIGAS -->
     <div class="menu-categorias">
         <a href="index.html">Início</a>
-        <a href="liga.html?liga=laliga">La Liga</a>
+        <a href="liga.html?liga=retro">Rêtro</a>
+        <a href="liga.html?liga=la liga">La Liga</a>
         <a href="liga.html?liga=premier">Premier League</a>
         <a href="liga.html?liga=brasileirao">Brasileirão</a>
         <a href="liga.html?liga=copa do mundo">2026 FIFA World Cup</a>
         <a href="liga.html?liga=ligue 1">Ligue 1</a>
         <a href="liga.html?liga=serie a">Serie A</a>
         <a href="liga.html?liga=bundesliga">Bundesliga</a>
-        <a href="liga.html?liga=retro">Rêtro</a>
     </div>
 
     <div class="conteudo-principal">
@@ -112,7 +143,7 @@
         
         <section class="vitrine">
 
-        <!-- QUADRADINHO DA CAMISA 3-->
+        <!-- QUADRADINHO DA CAMISA 1-->
             <div class="card">
                 <img src="assets/img/retro/barcelona retro frente 17-18.jpg" alt="Camisa Barcelona">
                 <h3>Camisa Barcelona Retro 2017/2018</h3>
@@ -120,7 +151,7 @@
                 <a href="produto.html?id=barcelona1" class="btn-detalhes">Ver Detalhes</a>
             </div> 
 
-            <!-- QUADRADINHO DA CAMISA 3-->
+            <!-- QUADRADINHO DA CAMISA 2-->
             <div class="card">
                 <img src="assets/img/brasileirao/flamengo 26-27 frente.jpg" alt="Camisa Flamengo">
                 <h3>Camisa Flamengo I 2026/2027</h3>
@@ -128,7 +159,7 @@
                 <a href="produto.html?id=flamengo1" class="btn-detalhes">Ver Detalhes</a>
             </div> 
 
-            <!-- QUADRADINHO DA CAMISA  -->
+            <!-- QUADRADINHO DA CAMISA 3-->
             <div class="card">
                 <img src="assets/img/la liga/atletico madrid frente.png" alt="Camisa Atlético">
                 <h3>Camisa Atletico Madrid I 26/27 Jogador</h3>
@@ -136,7 +167,7 @@
                 <a href="produto.html?id=atletico1" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
-            <!-- QUADRADINHO DA CAMISA  -->
+            <!-- QUADRADINHO DA CAMISA 4 -->
             <div class="card">
                 <img src="assets/img/brasileirao/palmeiras 26-27 frente.jpg" alt="Camisa Palmeiras">
                 <h3>Camisa Palmeiras I 26/27 Versão Jogador</h3>
@@ -145,7 +176,7 @@
             </div>
 
     
-            <!-- QUADRADINHO DA CAMISA 4 -->
+            <!-- QUADRADINHO DA CAMISA 5 -->
             <div class="card">
                 <img src="assets/img/copa/brasil I frente.jpg" alt="Camisa Brasil">
                 <h3>Camisa Brasil I 2026 Versão Jogador</h3>
@@ -153,7 +184,7 @@
                 <a href="produto.html?id=brasil1" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
-            <!-- QUADRADINHO DA CAMISA 4 -->
+            <!-- QUADRADINHO DA CAMISA 6 -->
             <div class="card">
                 <img src="assets/img/copa/brasil II frente.jpg" alt="Camisa Brasil">
                 <h3>Camisa Brasil II 2026 Versão Jogador</h3>
@@ -161,7 +192,7 @@
                 <a href="produto.html?id=brasil2" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
-            <!-- QUADRADINHO DA CAMISA 4 -->
+            <!-- QUADRADINHO DA CAMISA 7 -->
             <div class="card">
                 <img src="assets/img/copa/espanha frente II 2026.jpg" alt="Camisa España">
                 <h3>Camisa Espanha II 2026 Versão Jogador</h3>
@@ -169,7 +200,39 @@
                 <a href="produto.html?id=espanha2" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
-            <!-- QUADRADINHO DA CAMISA 4 -->
+            <!-- QUADRADINHO DA CAMISA 8 -->
+            <div class="card">
+                <img src="assets/img/copa/espanha frente I 2026.jpg" alt="Camisa España">
+                <h3>Camisa Espanha I 2026 Versão Jogador</h3>
+                <p class="preco">R$ 299,90</p>
+                <a href="produto.html?id=espanha1" class="btn-detalhes">Ver Detalhes</a>
+            </div>
+
+            <!-- QUADRADINHO DA CAMISA  -->
+            <div class="card">
+                <img src="assets/img/brasileirao/internacional 26-27 frente.jpg" alt="Camisa Internacional">
+                <h3>Camisa Internacional I 26/27</h3>
+                <p class="preco">R$ 219,90</p>
+                <a href="produto.html?id=internacional1" class="btn-detalhes">Ver Detalhes</a>
+            </div>
+
+            <!-- QUADRADINHO DA CAMISA  -->
+            <div class="card">
+                <img src="assets/img/brasileirao/gremio 2 25-26 frente.jpg" alt="Camisa Gremio">
+                <h3>Camisa Grêmio II 25/26</h3>
+                <p class="preco">R$ 219,90</p>
+                <a href="produto.html?id=gremio1" class="btn-detalhes">Ver Detalhes</a>
+            </div>
+
+            <!-- QUADRADINHO DA CAMISA  -->
+            <div class="card">
+                <img src="assets/img/copa/espanha frente I 2026.jpg" alt="Camisa España">
+                <h3>Camisa Espanha I 2026 Versão Jogador</h3>
+                <p class="preco">R$ 299,90</p>
+                <a href="produto.html?id=espanha1" class="btn-detalhes">Ver Detalhes</a>
+            </div>
+
+            <!-- QUADRADINHO DA CAMISA  -->
             <div class="card">
                 <img src="assets/img/copa/espanha frente I 2026.jpg" alt="Camisa España">
                 <h3>Camisa Espanha I 2026 Versão Jogador</h3>
