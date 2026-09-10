@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/img/favicon.png">
     
-    <!-- BIBLIOTECA DE ÍCONES (FONT AWESOME) - ISSO AQUI FALTAVA -->
+    <!-- BIBLIOTECA DE ÍCONES (FONT AWESOME) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -59,36 +59,35 @@
         .fundo-escuro { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999; }
 
         .whatsapp-btn {
-  position: fixed;
-  bottom: 20px;            /* Distância do canto inferior */
-  left: 20px;             /* Distância do canto direito */
-  width: 55px;             /* Largura do botão */
-  height: 55px;            /* Altura do botão */
-  background-color: #25d366; /* Verde oficial do WhatsApp */
-  color: #ffffff;          /* Cor do ícone */
-  border-radius: 50%;      /* Deixa o botão redondo */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 32px;         /* Tamanho do ícone */
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25); /* Sombra suave */
-  text-decoration: none;
-  z-index: 9999;           /* Garante que fique por cima de tudo no site */
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 55px;
+            height: 55px;
+            background-color: #25d366;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+            text-decoration: none;
+            z-index: 9999;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
 
-/* Efeito ao passar o mouse */
-.whatsapp-btn:hover {
-  background-color: #20ba5a;
-  transform: scale(1.1);
-}
+        .whatsapp-btn:hover {
+            background-color: #20ba5a;
+            transform: scale(1.1);
+        }
 
         /* RODAPÉ (FOOTER) */
         .footer { background-color: #222; color: #fff; padding: 40px 50px 20px; text-align: center; margin-top: 50px; }
         .footer-redes { margin-bottom: 20px; }
         .footer-redes a { color: #e5ff00; text-decoration: none; font-size: 1.2em; margin: 0 15px; transition: 0.3s; font-weight: bold; }
         .footer-redes a:hover { color: #fff; }
-        .footer-redes a i { margin-right: 8px; } /* Espaço no ícone */
+        .footer-redes a i { margin-right: 8px; }
         .footer-texto { margin-top: 20px; font-size: 0.9em; color: #aaa; border-top: 1px solid #444; padding-top: 20px; line-height: 1.5; }
 
         /* REGRAS PARA CELULAR (Design Responsivo) */
@@ -105,13 +104,10 @@
 </head>
 <body>
 
-    <!-- FontAwesome para carregar o ícone oficial do WhatsApp -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<!-- Botão Flutuante do WhatsApp -->
-<a href="https://wa.me/5546991087501" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5546991087501" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <div class="top-bar">
         <a href="https://www.instagram.com/dgsportsbrasil?igsi=MWloN3ltY3N1c2pvag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | 
@@ -150,7 +146,7 @@
         <div class="footer-texto"><p>&copy; 2026 DG Sports - Todos os direitos reservados.</p><p>Pato Branco, Paraná - PR</p></div>
     </footer>
 
-    <!-- CARRINHO E JS (MANTIDOS IGUAL VOCÊ MANDOU) -->
+    <!-- CARRINHO -->
     <div class="fundo-escuro" id="fundo-escuro" onclick="fecharCarrinho()"></div>
     <div class="carrinho-modal" id="carrinho-modal">
         <div class="carrinho-header"><h2>Seu Carrinho</h2><span class="fechar-carrinho" onclick="fecharCarrinho()">X</span></div>
@@ -160,30 +156,31 @@
 
     <script>
         const catalogo = {
-            "real1": { liga: "la liga", nome: "Camisa Real Madrid I 2021/2022 Branca", preco: "R$ 219,90", foto: "assets/img/la liga/real madrid frente.jpg" },
-            "atletico1": { liga: "la liga", nome: "Camisa Atlético de Madrid I 2024/2025", preco: "R$ 299,90", foto: "assets/img/la liga/atletico madrid frente.png" },
-            "flamengo1": { liga: "brasileirao", nome: "Camisa Flamengo I 2026/2027", preco: "R$ 219,90", foto: "assets/img/brasileirao/flamengo 26-27 frente.jpg" },
-            "brasil1": { liga: "copa do mundo", nome: "Camisa Brasil 2026 I Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Brasileira para a Copa do Mundo 2026.", foto: "assets/img/copa/brasil I frente.jpg" },
-            "brasil2": { liga: "copa do mundo", nome: "Camisa Brasil 2026 II Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Brasileira para a Copa do Mundo 2026.", foto: "assets/img/copa/brasil II frente.jpg" },
-            "espanha2": { liga: "copa do mundo", nome: "Camisa Espanha 2026 II Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Espanhola para a Copa do Mundo 2026.", foto: "assets/img/copa/espanha frente II 2026.jpg" },
-            "espanha1": { liga: "copa do mundo", nome: "Camisa Espanha 2026 I Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Espanhola para a Copa do Mundo ２０２６.", foto: "assets/img/copa/espanha frente I ２０２６.jpg" },
-            "barcelona1": { liga: "retro", nome: "Camisa Barcelona Retro 2017/2018", preco: "R$ 339,90", foto: "assets/img/retro/barcelona retro frente 17-18.jpg" },
-            "barcelona2": { liga: "retro", nome: "Camisa Barcelona 2014/2015", preco: "R$ 339,90", foto: "assets/img/retro/Retro Barcelona 14-15 frente.jpg" },
-            "barcelona3": { liga: "retro", nome: "Camisa Barcelona 2015/2016", preco: "R$ 339,90", foto: "assets/img/retro/barcelona retro 15-16 frente.jpg" },
-            "palmeiras1": { liga: "brasileirao", nome: "Camisa Palmeiras I 26/27 ", preco: "R$ 219,90", foto: "assets/img/brasileirao/palmeiras 26-27 frente.jpg" },
-            "barcelona6": { liga: "la liga", nome: "Camisa Barcelona II 2024/2025", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona 2024-25 II frente.jpg" },
-            "internacional1": { liga: "brasileirao", nome: "Camisa Internacional I 26/27", preco: "R$ 219,90", foto: "assets/img/brasileirao/internacional 26-27 frente.jpg" },
-            "internacional2": { liga: "brasileirao", nome: "Camisa Internacional II 25/26 Black", preco: "R$ 219,90", foto: "assets/img/brasileirao/internacional 25-26 frente.jpg" },
-            "internacional3": { liga: "brasileirao", nome: "Camisa Internacional II 26/27", preco: "R$ 219,90", foto: "assets/img/brasileirao/internacional 2 26-27 frente.jpg" },
-            "gremio1": { liga: "brasileirao", nome: "Camisa Grêmio II 25/26", preco: "R$ 219,90", foto: "assets/img/brasileirao/Gremio 2 25-26 frente.jpg" },
-            "barcelona4": { liga: "la liga", nome: "Camisa Barcelona II 2026/2027 ", preco: "R$ 219,90", foto: "assets/img/la liga/Barcelona 2026-27 frente.jpg" },
-            "barcelona5": { liga: "la liga", nome: "Camisa Barcelona I 2025/2026 ", preco: "R$ 219,90", foto: "assets/img/la liga/Barcelona 2025-26 frente.jpg" },
-            "barcelona7": { liga: "la liga", nome: "Camisa Barcelona II 2024/2025", preco: "R$ 219,90", foto: "assets/img/la liga/Barcelona 2024-25 I frente.jpg" },
-            "barcelona8": { liga: "la liga", nome: "Camisa Barcelona II 2025/2026", preco: "R$ 219,90", foto: "assets/img/la liga/Barcelona 2025-26 II frente.jpg" },
-            "barcelona9": { liga: "la liga", nome: "Camisa Barcelona III 2025/2026", preco: "R$ 219,90", foto: "assets/img/la liga/Barcelona 2025-26 III frente.jpg" },
-            "barcelona10": { liga: "retro", nome: "Camisa Barcelona Retro 20/21", preco: "R$ 299,90", foto: "assets/img/retro/retro 20-21 Barcelona frente.jpg" },
-            "barcelona11": { liga: "la liga", nome: "Camisa Barcelona Edição Especial 2024/2025", preco: "R$ 219,90", foto: "assets/img/la liga/Barcelona 2024-25 edição especial frente.jpg" },
-        
+            "real1": { liga: "la liga", nome: "Camisa Real Madrid I 2021/2022 Branca", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/la liga/real madrid/real madrid frente.jpg" },
+            "atletico1": { liga: "la liga", nome: "Camisa Atlético de Madrid I 2024/2025", precoAntigo: "R$ 349,90", preco: "R$ 299,90", foto: "assets/img/la liga/atletico madrid/atletico madrid frente.png" },
+            "flamengo1": { liga: "brasileirao", nome: "Camisa Flamengo I 2026/2027", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/brasileirao/flamengo 26-27 frente.jpg" },
+            "brasil1": { liga: "copa do mundo", nome: "Camisa Brasil 2026 I Versão Jogador", precoAntigo: "R$ 349,90", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Brasileira para a Copa do Mundo 2026.", foto: "assets/img/copa/brasil I frente.jpg" },
+            "brasil2": { liga: "copa do mundo", nome: "Camisa Brasil 2026 II Versão Jogador", precoAntigo: "R$ 349,90", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Brasileira para a Copa do Mundo 2026.", foto: "assets/img/copa/brasil II frente.jpg" },
+            "espanha2": { liga: "copa do mundo", nome: "Camisa Espanha 2026 II Versão Jogador", precoAntigo: "R$ 349,90", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Espanhola para a Copa do Mundo 2026.", foto: "assets/img/copa/espanha frente II 2026.jpg" },
+            "espanha1": { liga: "copa do mundo", nome: "Camisa Espanha 2026 I Versão Jogador", precoAntigo: "R$ 349,90", preco: "R$ 299,90", descricao: "Camisa oficial da Seleção Espanhola para a Copa do Mundo 2026.", foto: "assets/img/copa/espanha frente I 2026.jpg" },
+            "barcelona1": { liga: "retro", nome: "Camisa Barcelona Retro 2017/2018", precoAntigo: "R$ 399,90", preco: "R$ 339,90", foto: "assets/img/retro/barcelona retro frente 17-18.jpg" },
+            "barcelona2": { liga: "retro", nome: "Camisa Barcelona 2014/2015", precoAntigo: "R$ 399,90", preco: "R$ 339,90", foto: "assets/img/retro/Retro Barcelona 14-15 frente.jpg" },
+            "barcelona3": { liga: "retro", nome: "Camisa Barcelona 2015/2016", precoAntigo: "R$ 399,90", preco: "R$ 339,90", foto: "assets/img/retro/barcelona retro 15-16 frente.jpg" },
+            "palmeiras1": { liga: "brasileirao", nome: "Camisa Palmeiras I 26/27 ", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/brasileirao/palmeiras 26-27 frente.jpg" },
+            "barcelona6": { liga: "la liga", nome: "Camisa Barcelona II 2024/2025", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona/barcelona 2024-25 II frente.jpg" },
+            "internacional1": { liga: "brasileirao", nome: "Camisa Internacional I 26/27", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/brasileirao/internacional 26-27 frente.jpg" },
+            "internacional2": { liga: "brasileirao", nome: "Camisa Internacional II 25/26 Black", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/brasileirao/internacional 25-26 frente.jpg" },
+            "internacional3": { liga: "brasileirao", nome: "Camisa Internacional II 26/27", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/brasileirao/internacional 2 26-27 frente.jpg" },
+            "gremio1": { liga: "brasileirao", nome: "Camisa Grêmio II 25/26", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/brasileirao/Gremio 2 25-26 frente.jpg" },
+            "barcelona4": { liga: "la liga", nome: "Camisa Barcelona II 2026/2027 ", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona/Barcelona 2026-27 frente.jpg" },
+            "barcelona5": { liga: "la liga", nome: "Camisa Barcelona I 2025/2026 ", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona/Barcelona 2025-26 frente.jpg" },
+            "barcelona7": { liga: "la liga", nome: "Camisa Barcelona II 2024/2025", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona/Barcelona 2024-25 I frente.jpg" },
+            "barcelona8": { liga: "la liga", nome: "Camisa Barcelona II 2025/2026", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona/Barcelona 2025-26 II frente.jpg" },
+            "barcelona9": { liga: "la liga", nome: "Camisa Barcelona III 2025/2026", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona/Barcelona 2025-26 III frente.jpg" },
+            "barcelona10": { liga: "retro", nome: "Camisa Barcelona Retro 20/21", precoAntigo: "R$ 399,90", preco: "R$ 339,90", foto: "assets/img/retro/retro 20-21 Barcelona frente.jpg" },
+            "barcelona11": { liga: "la liga", nome: "Camisa Barcelona Edição Especial 2024/2025", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona/Barcelona 2024-25 edição especial frente.jpg" },
+            "milan1": { liga: "serie a", nome: "Camisa Milan I 2026/2027", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/serie a/Milan 2026-27 II frente.jpg" },
+            "barcelona12": { liga: "la liga", nome: "Camisa Barcelona Edição Especial 2025/2026", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona/Barcelona 2025-26 edição especial frente.jpg" }
         
         };
 
@@ -192,19 +189,28 @@
         const vitrine = document.getElementById('vitrine-liga');
         const titulo = document.getElementById('titulo-pagina');
 
-        if (ligaEscolhida === 'laliga') titulo.innerText = "La Liga";
+        if (ligaEscolhida === 'laliga' || ligaEscolhida === 'la liga') titulo.innerText = "La Liga";
         else if (ligaEscolhida === 'premier') titulo.innerText = "Premier League";
         else if (ligaEscolhida === 'brasileirao') titulo.innerText = "Brasileirão";
+        else if (ligaEscolhida === 'retro') titulo.innerText = "Retrô";
+        else if (ligaEscolhida === 'copa do mundo') titulo.innerText = "Copa do Mundo 2026";
+        else if (ligaEscolhida === 'serie a') titulo.innerText = "Serie A";
         else titulo.innerText = "Camisas Encontradas";
 
         for (const idProduto in catalogo) {
             const camisa = catalogo[idProduto];
             if (camisa.liga === ligaEscolhida) {
+                
+                // Verifica se o produto tem preço antigo para exibi-lo riscado
+                let htmlPreco = camisa.precoAntigo 
+                    ? `<del style="color: #777; font-size: 0.8em; font-weight: normal;">${camisa.precoAntigo}</del> <br> <strong>${camisa.preco}</strong>` 
+                    : `<strong>${camisa.preco}</strong>`;
+
                 vitrine.innerHTML += `
                     <div class="card">
                         <img src="${camisa.foto}" alt="${camisa.nome}">
                         <h3>${camisa.nome}</h3>
-                        <p class="preco">${camisa.preco}</p>
+                        <p class="preco">${htmlPreco}</p>
                         <a href="produto.html?id=${idProduto}" class="btn-detalhes">Ver Detalhes</a>
                     </div>
                 `;
@@ -213,16 +219,29 @@
 
         const numeroWhatsApp = "5546991087501"; 
         let carrinho = JSON.parse(localStorage.getItem('carrinhoDGSports')) || [];
+        
         function atualizarContagem() { document.getElementById('contagem-carrinho').innerText = carrinho.length; }
         function abrirCarrinho() { document.getElementById('carrinho-modal').style.display = 'flex'; document.getElementById('fundo-escuro').style.display = 'block'; renderizarItens(); }
         function fecharCarrinho() { document.getElementById('carrinho-modal').style.display = 'none'; document.getElementById('fundo-escuro').style.display = 'none'; }
+        
         function renderizarItens() {
             let listaHTML = '';
             if(carrinho.length === 0) { listaHTML = "<p>Seu carrinho está vazio.</p>"; } 
-            else { carrinho.forEach((item, index) => { listaHTML += `<div class="item-cart"><div><strong>${item.nome}</strong><br>Tamanho: ${item.tamanho}</div><div><span style="color:red; cursor:pointer;" onclick="removerItem(${index})">Remover</span></div></div>`; }); }
+            else { 
+                carrinho.forEach((item, index) => { 
+                    listaHTML += `<div class="item-cart"><div><strong>${item.nome}</strong><br>Tamanho: ${item.tamanho}</div><div><span style="color:red; cursor:pointer;" onclick="removerItem(${index})">Remover</span></div></div>`; 
+                }); 
+            }
             document.getElementById('lista-itens-carrinho').innerHTML = listaHTML;
         }
-        function removerItem(index) { carrinho.splice(index, 1); localStorage.setItem('carrinhoDGSports', JSON.stringify(carrinho)); renderizarItens(); atualizarContagem(); }
+        
+        function removerItem(index) { 
+            carrinho.splice(index, 1); 
+            localStorage.setItem('carrinhoDGSports', JSON.stringify(carrinho)); 
+            renderizarItens(); 
+            atualizarContagem(); 
+        }
+        
         function finalizarCompraWhatsApp() {
             if (carrinho.length === 0) { alert("Adicione camisas ao carrinho antes de finalizar!"); return; }
             let textoMensagem = "Olá, DG Sports! Gostaria de finalizar meu pedido. Aqui estão as camisas:\n\n";
@@ -230,6 +249,7 @@
             textoMensagem += "\nComo faço para realizar o pagamento?";
             window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoMensagem)}`, '_blank');
         }
+        
         atualizarContagem();
     </script>
 </body>

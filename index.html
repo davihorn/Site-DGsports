@@ -46,8 +46,12 @@
         .card { text-align: center; transition: transform 0.3s; }
         .card:hover { transform: translateY(-5px); }
         .card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; background-color: #f5f5f5; margin-bottom: 15px; border-radius: 8px; }
-        .card h3 { font-size: 0.9em; margin-bottom: 5px; color: #333; font-weight: normal; }
-        .card .preco { font-size: 1.1em; font-weight: bold; color: #000; margin-bottom: 15px; }
+        .card h3 { font-size: 14px; margin-bottom: 5px; color: #333; font-weight: bold; }
+        .card p { font-size: 1.1em; color: #000; margin-bottom: 15px; }
+        
+        /* ESTILO DO PREÇO ANTIGO (O QUE DEIXA CINZA E MENOR) */
+        .card p del { color: #777; font-size: 0.8em; font-weight: normal; }
+        
         .btn-detalhes { display: inline-block; background-color: #fff; color: #000; border: 1px solid #000; text-decoration: none; padding: 8px 15px; font-size: 0.9em; font-weight: bold; width: 100%; transition: 0.3s; border-radius: 4px; }
         .btn-detalhes:hover { background-color: #000; color: #fff; }
 
@@ -147,40 +151,41 @@
             <div class="card">
                 <img src="assets/img/retro/barcelona retro frente 17-18.jpg" alt="Camisa Barcelona">
                 <h3>Camisa Barcelona Retro 2017/2018</h3>
-                <p class="preco">R$ 339,90</p>
+                <p><del>R$ 399,90</del> <br> <strong>R$ 339,90</strong></p>
                 <a href="produto.html?id=barcelona1" class="btn-detalhes">Ver Detalhes</a>
             </div> 
 
-            <!-- QUADRADINHO DA CAMISA 2-->
             <div class="card">
-                <img src="assets/img/brasileirao/flamengo 26-27 frente.jpg" alt="Camisa Flamengo">
-                <h3>Camisa Flamengo I 2026/2027</h3>
-                <p class="preco">R$ 219,90</p>
-                <a href="produto.html?id=flamengo1" class="btn-detalhes">Ver Detalhes</a>
-            </div> 
+                <img src="assets/img/serie a/Milan 2026-27 II frente.jpg" alt="Camisa Milan">
+                <h3>Camisa Milan I 26/27</h3>
+                <p><del>R$ 299,90</del> <br> <strong>R$ 219,90</strong></p>
+                <a href="produto.html?id=milan1" class="btn-detalhes">Ver Detalhes</a>
+            </div>
 
+            
             <!-- QUADRADINHO DA CAMISA 3-->
             <div class="card">
-                <img src="assets/img/la liga/atletico madrid frente.png" alt="Camisa Atlético">
-                <h3>Camisa Atletico Madrid I 26/27 Jogador</h3>
-                <p class="preco">R$ 299,90</p>
+                <img src="assets/img/la liga/atletico madrid/Atletico Madrid frente.png" alt="Camisa Atlético">
+                <h3>Camisa Atletico Madrid I 26/27</h3>
+                <p><del>R$ 349,90</del> <br> <strong>R$ 299,90</strong></p>
                 <a href="produto.html?id=atletico1" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
-            <!-- QUADRADINHO DA CAMISA 4 -->
+           <!-- QUADRADINHO DA CAMISA 3-->
             <div class="card">
-                <img src="assets/img/brasileirao/palmeiras 26-27 frente.jpg" alt="Camisa Palmeiras">
-                <h3>Camisa Palmeiras I 26/27 Versão Jogador</h3>
-                <p class="preco">R$ 299,90</p>
-                <a href="produto.html?id=palmeiras1" class="btn-detalhes">Ver Detalhes</a>
+                <img src="assets/img/benfica/Benfica 2026-27 II frente.jpg" alt="Camisa Atlético">
+                <h3>Camisa Benfica I 26/27</h3>
+                <p><del>R$ 299,90</del> <br> <strong>R$ 219,90</strong></p>
+                <a href="produto.html?id=benfica1" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
+            
     
             <!-- QUADRADINHO DA CAMISA 5 -->
             <div class="card">
                 <img src="assets/img/copa/brasil I frente.jpg" alt="Camisa Brasil">
                 <h3>Camisa Brasil I 2026 Versão Jogador</h3>
-                <p class="preco">R$ 299,90</p>
+                <p><del>R$ 349,90</del> <br> <strong>R$ 299,90</strong></p>
                 <a href="produto.html?id=brasil1" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
@@ -188,7 +193,7 @@
             <div class="card">
                 <img src="assets/img/copa/brasil II frente.jpg" alt="Camisa Brasil">
                 <h3>Camisa Brasil II 2026 Versão Jogador</h3>
-                <p class="preco">R$ 299,90</p>
+                <p><del>R$ 349,90</del> <br> <strong>R$ 299,90</strong></p>
                 <a href="produto.html?id=brasil2" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
@@ -196,7 +201,7 @@
             <div class="card">
                 <img src="assets/img/copa/espanha frente II 2026.jpg" alt="Camisa España">
                 <h3>Camisa Espanha II 2026 Versão Jogador</h3>
-                <p class="preco">R$ 299,90</p>
+                <p><del>R$ 349,90</del> <br> <strong>R$ 299,90</strong></p>
                 <a href="produto.html?id=espanha2" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
@@ -204,7 +209,7 @@
             <div class="card">
                 <img src="assets/img/copa/espanha frente I 2026.jpg" alt="Camisa España">
                 <h3>Camisa Espanha I 2026 Versão Jogador</h3>
-                <p class="preco">R$ 299,90</p>
+                <p><del>R$ 349,90</del> <br> <strong>R$ 299,90</strong></p>
                 <a href="produto.html?id=espanha1" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
@@ -212,7 +217,7 @@
             <div class="card">
                 <img src="assets/img/brasileirao/internacional 26-27 frente.jpg" alt="Camisa Internacional">
                 <h3>Camisa Internacional I 26/27</h3>
-                <p class="preco">R$ 219,90</p>
+                <p><del>R$ 299,90</del> <br> <strong>R$ 219,90</strong></p>
                 <a href="produto.html?id=internacional1" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
@@ -220,25 +225,27 @@
             <div class="card">
                 <img src="assets/img/brasileirao/gremio 2 25-26 frente.jpg" alt="Camisa Gremio">
                 <h3>Camisa Grêmio II 25/26</h3>
-                <p class="preco">R$ 219,90</p>
+                <p><del>R$ 299,90</del> <br> <strong>R$ 219,90</strong></p>
                 <a href="produto.html?id=gremio1" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
-            <!-- QUADRADINHO DA CAMISA  -->
+             <!-- QUADRADINHO DA CAMISA 4 -->
             <div class="card">
-                <img src="assets/img/copa/espanha frente I 2026.jpg" alt="Camisa España">
-                <h3>Camisa Espanha I 2026 Versão Jogador</h3>
-                <p class="preco">R$ 299,90</p>
-                <a href="produto.html?id=espanha1" class="btn-detalhes">Ver Detalhes</a>
+                <img src="assets/img/brasileirao/palmeiras 26-27 frente.jpg" alt="Camisa Palmeiras">
+                <h3>Camisa Palmeiras I 26/27</h3>
+                <p><del>R$ 299,90</del> <br> <strong>R$ 219,90</strong></p>
+                <a href="produto.html?id=palmeiras1" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
-            <!-- QUADRADINHO DA CAMISA  -->
+            <!-- QUADRADINHO DA CAMISA 2-->
             <div class="card">
-                <img src="assets/img/copa/espanha frente I 2026.jpg" alt="Camisa España">
-                <h3>Camisa Espanha I 2026 Versão Jogador</h3>
-                <p class="preco">R$ 299,90</p>
-                <a href="produto.html?id=espanha1" class="btn-detalhes">Ver Detalhes</a>
-            </div>
+                <img src="assets/img/brasileirao/flamengo 26-27 frente.jpg" alt="Camisa Flamengo">
+                <h3>Camisa Flamengo I 2026/2027</h3>
+                <p><del>R$ 299,90</del> <br> <strong>R$ 219,90</strong></p>
+                <a href="produto.html?id=flamengo1" class="btn-detalhes">Ver Detalhes</a>
+            </div> 
+
+
 
 
         </section>
