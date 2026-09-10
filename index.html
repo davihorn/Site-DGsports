@@ -17,10 +17,11 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #ffffff; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
         
+       
+
         /* CABEÇALHO */
         .top-bar { background-color: #1a1aff; color: white; text-align: center; padding: 5px 0; font-size: 0.8em; }
         .top-bar a { color: white; text-decoration: none; margin: 0 10px; }
-        /* Adiciona um espacinho entre a logo e o nome da rede social */
         .top-bar a i { margin-right: 5px; font-size: 1.1em; } 
         
         .header-amarelo { background-color: #e5ff00; padding: 15px 50px; display: flex; align-items: center; justify-content: space-between; }
@@ -42,14 +43,13 @@
         .titulo-secao { text-align: center; margin: 40px 0; font-size: 1.8em; font-weight: bold; }
         .vitrine { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; padding: 0 50px 50px; max-width: 1200px; margin: 0 auto; }
         
-        /* CARD DOS PRODUTOS */
-        .card { text-align: center; transition: transform 0.3s; }
+        /* CARD DOS PRODUTOS - ALINHAMENTO CORRIGIDO */
+        .card { text-align: center; transition: transform 0.3s; display: flex; flex-direction: column; height: 100%; }
         .card:hover { transform: translateY(-5px); }
         .card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; background-color: #f5f5f5; margin-bottom: 15px; border-radius: 8px; }
         .card h3 { font-size: 14px; margin-bottom: 5px; color: #333; font-weight: bold; }
-        .card p { font-size: 1.1em; color: #000; margin-bottom: 15px; }
-        
-        /* ESTILO DO PREÇO ANTIGO (O QUE DEIXA CINZA E MENOR) */
+        /* A margem "auto" aqui empurra o preço e o botão sempre para o final do card */
+        .card p { font-size: 1.1em; color: #000; margin-bottom: 15px; margin-top: auto; } 
         .card p del { color: #777; font-size: 0.8em; font-weight: normal; }
         
         .btn-detalhes { display: inline-block; background-color: #fff; color: #000; border: 1px solid #000; text-decoration: none; padding: 8px 15px; font-size: 0.9em; font-weight: bold; width: 100%; transition: 0.3s; border-radius: 4px; }
@@ -109,7 +109,7 @@
 </head>
 <body>
 
-    <!-- FontAwesome para carregar o ícone oficial do WhatsApp -->
+<!-- FontAwesome para carregar o ícone oficial do WhatsApp -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <!-- Botão Flutuante do WhatsApp -->
@@ -117,29 +117,33 @@
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-    <div class="top-bar">
-        <a href="https://www.instagram.com/dgsportsbrasil?igsi=MWloN3ltY3N1c2pvag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | 
-        <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a> |
-        <a href="https://wa.me/5546991087501" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    </div>
-    
-    <header class="header-amarelo">
-        <div class="logo"><a href="index.html"><img src="assets/img/logo DGsports.png" alt="Logo DG Sports"></a></div>
-        <div class="carrinho-icon" onclick="abrirCarrinho()"><span>🛒</span><div class="badge-carrinho" id="contagem-carrinho">0</div></div>
-    </header>
+    <!-- INÍCIO DO MENU FIXO -->
+    <div class="menu-fixo">
+        <div class="top-bar">
+            <a href="https://www.instagram.com/dgsportsbrasil?igsi=MWloN3ltY3N1c2pvag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | 
+            <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a> |
+            <a href="https://wa.me/5546991087501" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        
+        <header class="header-amarelo">
+            <div class="logo"><a href="index.html"><img src="assets/img/logo DGsports.png" alt="Logo DG Sports"></a></div>
+            <div class="carrinho-icon" onclick="abrirCarrinho()"><span>🛒</span><div class="badge-carrinho" id="contagem-carrinho">0</div></div>
+        </header>
 
-    <!-- MENU POR LIGAS -->
-    <div class="menu-categorias">
-        <a href="index.html">Início</a>
-        <a href="liga.html?liga=retro">Rêtro</a>
-        <a href="liga.html?liga=la liga">La Liga</a>
-        <a href="liga.html?liga=premier">Premier League</a>
-        <a href="liga.html?liga=brasileirao">Brasileirão</a>
-        <a href="liga.html?liga=copa do mundo">2026 FIFA World Cup</a>
-        <a href="liga.html?liga=ligue 1">Ligue 1</a>
-        <a href="liga.html?liga=serie a">Serie A</a>
-        <a href="liga.html?liga=bundesliga">Bundesliga</a>
+        <!-- MENU POR LIGAS -->
+        <div class="menu-categorias">
+            <a href="index.html">Início</a>
+            <a href="liga.html?liga=retro">Rêtro</a>
+            <a href="liga.html?liga=la liga">La Liga</a>
+            <a href="liga.html?liga=premier">Premier League</a>
+            <a href="liga.html?liga=brasileirao">Brasileirão</a>
+            <a href="liga.html?liga=copa do mundo">2026 FIFA World Cup</a>
+            <a href="liga.html?liga=ligue 1">Ligue 1</a>
+            <a href="liga.html?liga=serie a">Serie A</a>
+            <a href="liga.html?liga=bundesliga">Bundesliga</a>
+        </div>
     </div>
+    <!-- FIM DO MENU FIXO -->
 
     <div class="conteudo-principal">
         <div class="banner-hero"><img src="assets/img/banner.jpg" alt="Banner DG Sports"></div>
@@ -156,16 +160,15 @@
             </div> 
 
             <div class="card">
-                <img src="assets/img/serie a/Milan 2026-27 II frente.jpg" alt="Camisa Milan">
+                <img src="assets/img/serie a/Milan 2026-27 II frente.jpg" alt="Camisa Atlético">
                 <h3>Camisa Milan I 26/27</h3>
                 <p><del>R$ 299,90</del> <br> <strong>R$ 219,90</strong></p>
                 <a href="produto.html?id=milan1" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
-            
             <!-- QUADRADINHO DA CAMISA 3-->
             <div class="card">
-                <img src="assets/img/la liga/atletico madrid/Atletico Madrid frente.png" alt="Camisa Atlético">
+                <img src="assets/img/la liga/atletico madrid/atletico madrid frente.png" alt="Camisa Atlético">
                 <h3>Camisa Atletico Madrid I 26/27</h3>
                 <p><del>R$ 349,90</del> <br> <strong>R$ 299,90</strong></p>
                 <a href="produto.html?id=atletico1" class="btn-detalhes">Ver Detalhes</a>
@@ -179,8 +182,6 @@
                 <a href="produto.html?id=benfica1" class="btn-detalhes">Ver Detalhes</a>
             </div>
 
-            
-    
             <!-- QUADRADINHO DA CAMISA 5 -->
             <div class="card">
                 <img src="assets/img/copa/brasil I frente.jpg" alt="Camisa Brasil">
@@ -244,9 +245,6 @@
                 <p><del>R$ 299,90</del> <br> <strong>R$ 219,90</strong></p>
                 <a href="produto.html?id=flamengo1" class="btn-detalhes">Ver Detalhes</a>
             </div> 
-
-
-
 
         </section>
     </div>

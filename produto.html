@@ -15,7 +15,7 @@
     <style>
         /* RESET E LAYOUT */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; } body { background-color: #f4f4f4; color: #333; display: flex; flex-direction: column; min-height: 100vh; } 
-        
+
         /* CABEÇALHO */
         .top-bar { background-color: #1a1aff; color: white; text-align: center; padding: 5px 0; font-size: 0.8em; } 
         .top-bar a { color: white; text-decoration: none; margin: 0 10px; } 
@@ -79,7 +79,7 @@
 </head>
 <body>
 
-    <!-- FontAwesome para carregar o ícone oficial do WhatsApp -->
+<!-- FontAwesome para carregar o ícone oficial do WhatsApp -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <!-- Botão Flutuante do WhatsApp -->
@@ -87,29 +87,32 @@
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-    <div class="top-bar">
-        <a href="https://www.instagram.com/dgsportsbrasil?igsi=MWloN3ltY3N1c2pvag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | 
-        <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a> | 
-        <a href="https://wa.me/5546991087501" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    </div>
-    
-    <header class="header-amarelo">
-        <div class="logo"><a href="index.html"><img src="assets/img/logo DGsports.png" alt="Logo DG Sports"></a></div>
-        <div class="carrinho-icon" onclick="abrirCarrinho()"><span>🛒</span><div class="badge-carrinho" id="contagem-carrinho">0</div></div>
-    </header>
+    <!-- INÍCIO DO MENU FIXO -->
+    <div class="menu-fixo">
+        <div class="top-bar">
+            <a href="https://www.instagram.com/dgsportsbrasil?igsi=MWloN3ltY3N1c2pvag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | 
+            <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a> | 
+            <a href="https://wa.me/5546991087501" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        
+        <header class="header-amarelo">
+            <div class="logo"><a href="index.html"><img src="assets/img/logo DGsports.png" alt="Logo DG Sports"></a></div>
+            <div class="carrinho-icon" onclick="abrirCarrinho()"><span>🛒</span><div class="badge-carrinho" id="contagem-carrinho">0</div></div>
+        </header>
 
-    <div class="menu-categorias">
-        <a href="index.html">Início</a>
-        <a href="liga.html?liga=retro">Rêtro</a>
-        <!-- AQUI FOI CORRIGIDO O ESPAÇO: "la liga" -->
-        <a href="liga.html?liga=la liga">La Liga</a>
-        <a href="liga.html?liga=premier">Premier League</a>
-        <a href="liga.html?liga=brasileirao">Brasileirão</a>
-        <a href="liga.html?liga=copa do mundo">2026 FIFA World Cup</a>
-        <a href="liga.html?liga=ligue 1">Ligue 1</a>
-        <a href="liga.html?liga=serie a">Serie A</a>
-        <a href="liga.html?liga=bundesliga">Bundesliga</a>
+        <div class="menu-categorias">
+            <a href="index.html">Início</a>
+            <a href="liga.html?liga=retro">Rêtro</a>
+            <a href="liga.html?liga=la liga">La Liga</a>
+            <a href="liga.html?liga=premier">Premier League</a>
+            <a href="liga.html?liga=brasileirao">Brasileirão</a>
+            <a href="liga.html?liga=copa do mundo">2026 FIFA World Cup</a>
+            <a href="liga.html?liga=ligue 1">Ligue 1</a>
+            <a href="liga.html?liga=serie a">Serie A</a>
+            <a href="liga.html?liga=bundesliga">Bundesliga</a>
+        </div>
     </div>
+    <!-- FIM DO MENU FIXO -->
 
     <div class="conteudo-principal">
         <div class="container-produto">
@@ -149,7 +152,7 @@
         </div>
     </footer>
 
-    <!-- CARRINHO E JS (MANTIDOS IGUAIS) -->
+    <!-- CARRINHO E JS -->
     <div class="fundo-escuro" id="fundo-escuro" onclick="fecharCarrinho()"></div>
     <div class="carrinho-modal" id="carrinho-modal">
         <div class="carrinho-header"><h2>Seu Carrinho</h2><span class="fechar-carrinho" onclick="fecharCarrinho()">X</span></div>
@@ -185,6 +188,11 @@
             "benfica1": { liga: "", nome: "Camisa Benfica I 2026/2027", preco: "R$ 219,90", descricao: "Camisa oficial do Benfica.", fotos: ["assets/img/benfica/Benfica 2026-27 II frente.jpg", "assets/img/benfica/Benfica 2026-27 II costas.jpg"] },
             "milan1": { liga: "serie a", nome: "Camisa Milan I 2026/2027", preco: "R$ 219,90", descricao: "Camisa oficial do Milan.", fotos: ["assets/img/serie a/Milan 2026-27 II frente.jpg", "assets/img/serie a/Milan 2026-27 II costas.jpg"] },
             "barcelona12": { liga: "laliga", nome: "Camisa Barcelona I 2026/2027", preco: "R$ 219,90", descricao: "Camisa oficial do Barcelona.", fotos: ["assets/img/la liga/barcelona/Barcelona 2025-26 edição especial frente.jpg", "assets/img/la liga/barcelona/Barcelona 2025-26 edição especial costas.jpg"] },
+            "barcelona13": { liga: "retro", nome: "Camisa Barcelona Retro 2014/2015", preco: "R$ 219,90", descricao: "Camisa retro do Barcelona.", fotos: ["assets/img/retro/Retro Barcelona 2014-15 II frente.jpg", "assets/img/retro/Retro Barcelona 2014-15 II costas.jpg"] },
+            "barcelona14": { liga: "la liga", nome: "Camisa Barcelona I 2026/27", preco: "R$ 219,90", descricao: "Camisa oficial do Barcelona.", fotos: ["assets/img/la liga/barcelona/Barcelona I 2026-27 frente.jpg","assets/img/la liga/barcelona/Barcelona I 2026-27 costas.jpg"] },
+            "barcelona15": { liga: "retro", nome: "Camisa Barcelona Retro 2013/14", preco: "R$ 339,90", descricao: "Camisa Retro do Barcelona.", fotos: ["assets/img/retro/Barcelona 2013-14 Retro frente.jpg","assets/img/retro/Barcelona 2013-14 Retro costas.jpg"] },
+            "barcelona16": { liga: "la liga", nome: "Camisa Barcelona II 23/24 Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial do Barcelona.", fotos: ["assets/img/la liga/barcelona/Barcelona 23-24 II frente.jpg","assets/img/la liga/barcelona/Barcelona 23-24 II costas.jpg"] },
+            "barcelona17": { liga: "la liga", nome: "Camisa Barcelona I 22/23 Versão Jogador", preco: "R$ 299,90", descricao: "Camisa oficial do Barcelona.", fotos: ["assets/img/la liga/barcelona/Barcelona 22-23 I frente.jpeg","assets/img/la liga/barcelona/Barcelona 22-23 I costas.jpeg"] }
 
         };
 

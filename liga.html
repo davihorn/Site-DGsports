@@ -16,7 +16,8 @@
         /* RESET E LAYOUT */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #ffffff; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
-        
+    
+
         /* CABEÇALHO */
         .top-bar { background-color: #1a1aff; color: white; text-align: center; padding: 5px 0; font-size: 0.8em; }
         .top-bar a { color: white; text-decoration: none; margin: 0 10px; }
@@ -40,12 +41,14 @@
         .titulo-secao { text-align: center; margin: 40px 0; font-size: 1.8em; font-weight: bold; text-transform: uppercase; }
         .vitrine { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; padding: 0 50px 50px; max-width: 1200px; margin: 0 auto; }
         
-        /* CARD DOS PRODUTOS */
-        .card { text-align: center; transition: transform 0.3s; }
+        /* CARD DOS PRODUTOS - ALINHAMENTO CORRIGIDO */
+        .card { text-align: center; transition: transform 0.3s; display: flex; flex-direction: column; height: 100%; }
         .card:hover { transform: translateY(-5px); }
         .card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; background-color: #f5f5f5; margin-bottom: 15px; border-radius: 8px; }
-        .card h3 { font-size: 0.9em; margin-bottom: 5px; color: #333; font-weight: normal; }
-        .card .preco { font-size: 1.1em; font-weight: bold; color: #000; margin-bottom: 15px; }
+        .card h3 { font-size: 0.9em; margin-bottom: 5px; color: #333; font-weight: normal; flex-grow: 1; }
+        /* A margem auto alinha na parte inferior */
+        .card .preco { font-size: 1.1em; font-weight: bold; color: #000; margin-bottom: 15px; margin-top: auto; }
+        
         .btn-detalhes { display: inline-block; background-color: #fff; color: #000; border: 1px solid #000; text-decoration: none; padding: 8px 15px; font-size: 0.9em; font-weight: bold; width: 100%; transition: 0.3s; border-radius: 4px; }
         .btn-detalhes:hover { background-color: #000; color: #fff; }
 
@@ -98,7 +101,7 @@
             .vitrine { padding: 0 20px 30px; grid-template-columns: repeat(2, 1fr); gap: 10px; } 
             .carrinho-modal { width: 100%; } 
             .footer { padding: 30px 20px; }
-            .footer-redes a { display: inline-block; margin: 10px; }
+            .footer-redes a { display: inline-block; margin: 10px; font-size: 1em; }
         }
     </style>
 </head>
@@ -109,28 +112,32 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <div class="top-bar">
-        <a href="https://www.instagram.com/dgsportsbrasil?igsi=MWloN3ltY3N1c2pvag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | 
-        <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a> | 
-        <a href="https://wa.me/5546991087501" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    </div>
-    
-    <header class="header-amarelo">
-        <div class="logo"><a href="index.html"><img src="assets/img/logo DGsports.png" alt="Logo DG Sports"></a></div>
-        <div class="carrinho-icon" onclick="abrirCarrinho()"><span>🛒</span><div class="badge-carrinho" id="contagem-carrinho">0</div></div>
-    </header>
+    <!-- INÍCIO DO MENU FIXO -->
+    <div class="menu-fixo">
+        <div class="top-bar">
+            <a href="https://www.instagram.com/dgsportsbrasil?igsi=MWloN3ltY3N1c2pvag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | 
+            <a href="https://www.tiktok.com/@dgsportsbrasil?_r=1&_t=ZS-999qIlBsazR" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a> | 
+            <a href="https://wa.me/5546991087501" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        
+        <header class="header-amarelo">
+            <div class="logo"><a href="index.html"><img src="assets/img/logo DGsports.png" alt="Logo DG Sports"></a></div>
+            <div class="carrinho-icon" onclick="abrirCarrinho()"><span>🛒</span><div class="badge-carrinho" id="contagem-carrinho">0</div></div>
+        </header>
 
-    <div class="menu-categorias">
-        <a href="index.html">Início</a>
-        <a href="liga.html?liga=retro">Rêtro</a>
-        <a href="liga.html?liga=la liga">La Liga</a>
-        <a href="liga.html?liga=premier">Premier League</a>
-        <a href="liga.html?liga=brasileirao">Brasileirão</a>
-        <a href="liga.html?liga=copa do mundo">2026 FIFA World Cup</a>
-        <a href="liga.html?liga=ligue 1">Ligue 1</a>
-        <a href="liga.html?liga=serie a">Serie A</a>
-        <a href="liga.html?liga=bundesliga">Bundesliga</a>
+        <div class="menu-categorias">
+            <a href="index.html">Início</a>
+            <a href="liga.html?liga=retro">Rêtro</a>
+            <a href="liga.html?liga=la liga">La Liga</a>
+            <a href="liga.html?liga=premier">Premier League</a>
+            <a href="liga.html?liga=brasileirao">Brasileirão</a>
+            <a href="liga.html?liga=copa do mundo">2026 FIFA World Cup</a>
+            <a href="liga.html?liga=ligue 1">Ligue 1</a>
+            <a href="liga.html?liga=serie a">Serie A</a>
+            <a href="liga.html?liga=bundesliga">Bundesliga</a>
+        </div>
     </div>
+    <!-- FIM DO MENU FIXO -->
 
     <div class="conteudo-principal">
         <h2 class="titulo-secao" id="titulo-pagina">Carregando...</h2>
@@ -180,7 +187,12 @@
             "barcelona10": { liga: "retro", nome: "Camisa Barcelona Retro 20/21", precoAntigo: "R$ 399,90", preco: "R$ 339,90", foto: "assets/img/retro/retro 20-21 Barcelona frente.jpg" },
             "barcelona11": { liga: "la liga", nome: "Camisa Barcelona Edição Especial 2024/2025", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona/Barcelona 2024-25 edição especial frente.jpg" },
             "milan1": { liga: "serie a", nome: "Camisa Milan I 2026/2027", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/serie a/Milan 2026-27 II frente.jpg" },
-            "barcelona12": { liga: "la liga", nome: "Camisa Barcelona Edição Especial 2025/2026", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona/Barcelona 2025-26 edição especial frente.jpg" }
+            "barcelona12": { liga: "la liga", nome: "Camisa Barcelona Edição Especial 2025/2026", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona/Barcelona 2025-26 edição especial frente.jpg" },
+            "barcelona13": { liga: "retro", nome: "Camisa Barcelona Retro 2014/15 ", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/retro/Retro Barcelona 2014-15 II frente.jpg" },
+            "barcelona14": { liga: "la liga", nome: "Camisa Barcelona I 2026/27 ", precoAntigo: "R$ 299,90", preco: "R$ 219,90", foto: "assets/img/la liga/barcelona/Barcelona I 2026-27 frente.jpg" },
+            "barcelona15": { liga: "retro", nome: "Camisa Barcelona Retro 2013/14", precoAntigo: "R$ 399,90", preco: "R$ 339,90", foto: "assets/img/retro/Barcelona 2013-14 Retro frente.jpg" },
+            "barcelona16": { liga: "la liga", nome: "Camisa Barcelona II 23/24 Versão Jogador", precoAntigo: "R$ 349,90", preco: "R$ 299,90", foto: "assets/img/la liga/barcelona/Barcelona 23-24 II frente.jpg" },
+            "barcelona17": { liga: "la liga", nome: "Camisa Barcelona I 22/23 Versão Jogador", precoAntigo: "R$ 349,90", preco: "R$ 299,90", foto: "assets/img/la liga/barcelona/Barcelona 22-23 I frente.jpeg" }
         
         };
 
@@ -201,7 +213,6 @@
             const camisa = catalogo[idProduto];
             if (camisa.liga === ligaEscolhida) {
                 
-                // Verifica se o produto tem preço antigo para exibi-lo riscado
                 let htmlPreco = camisa.precoAntigo 
                     ? `<del style="color: #777; font-size: 0.8em; font-weight: normal;">${camisa.precoAntigo}</del> <br> <strong>${camisa.preco}</strong>` 
                     : `<strong>${camisa.preco}</strong>`;
