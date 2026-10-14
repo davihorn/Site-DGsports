@@ -75,6 +75,52 @@
             .footer { padding: 30px 20px; }
             .footer-redes a { display: inline-block; margin: 10px; }
         }
+
+        /* BARRA DE PESQUISA DG SPORTS */
+.barra-pesquisa {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;
+    height: 44px;
+    background: #ffffff;
+    border: 2px solid #1a1aff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.barra-pesquisa input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0 14px;
+    border: none;
+    outline: none;
+    background: #ffffff;
+    color: #222222;
+    font-size: 14px;
+}
+
+.barra-pesquisa button {
+    width: 50px;
+    height: 100%;
+    flex-shrink: 0;
+    border: none;
+    background: #1a1aff;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.barra-pesquisa button:hover {
+    background: #0000cc;
+}
+
+@media (max-width: 768px) {
+    .barra-pesquisa {
+        max-width: 100%;
+    }
+}
     </style>
 </head>
 <body>

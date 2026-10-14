@@ -103,6 +103,52 @@
             .footer { padding: 30px 20px; }
             .footer-redes a { display: inline-block; margin: 10px; font-size: 1em; }
         }
+
+        /* BARRA DE PESQUISA DG SPORTS */
+.barra-pesquisa {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;
+    height: 44px;
+    background: #ffffff;
+    border: 2px solid #1a1aff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.barra-pesquisa input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0 14px;
+    border: none;
+    outline: none;
+    background: #ffffff;
+    color: #222222;
+    font-size: 14px;
+}
+
+.barra-pesquisa button {
+    width: 50px;
+    height: 100%;
+    flex-shrink: 0;
+    border: none;
+    background: #1a1aff;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.barra-pesquisa button:hover {
+    background: #0000cc;
+}
+
+@media (max-width: 768px) {
+    .barra-pesquisa {
+        max-width: 100%;
+    }
+}
     </style>
 </head>
 <body>
@@ -421,24 +467,49 @@
         };
 
         const urlParams = new URLSearchParams(window.location.search);
-        const ligaEscolhida = urlParams.get('liga');    
-        const vitrine = document.getElementById('vitrine-liga');
-        const titulo = document.getElementById('titulo-pagina');
+const ligaEscolhida = urlParams.get('liga');
+const termoBusca = urlParams.get('busca') || '';
 
-        if (ligaEscolhida === 'laliga' || ligaEscolhida === 'la liga') titulo.innerText = "La Liga";
-        else if (ligaEscolhida === 'premier') titulo.innerText = "Premier League";
-        else if (ligaEscolhida === 'brasileirao') titulo.innerText = "Brasileirão";
-        else if (ligaEscolhida === 'seleções') titulo.innerText = "Seleções";
-        else if (ligaEscolhida === 'retro') titulo.innerText = "Retrô";
-        else if (ligaEscolhida === 'ligue 1') titulo.innerText = "Ligue 1";
-        else if (ligaEscolhida === 'copa do mundo') titulo.innerText = "FIFA World Cup 2026";
-        else if (ligaEscolhida === 'serie a') titulo.innerText = "Serie A";
-        else if (ligaEscolhida === 'bundesliga') titulo.innerText = "Bundesliga";
-        else titulo.innerText = "Camisas Encontradas";
+const vitrine = document.getElementById('vitrine-liga');
+const titulo = document.getElementById('titulo-pagina');
 
-        for (const idProduto in catalogo) {
-            const camisa = catalogo[idProduto];
-            if (camisa.liga === ligaEscolhida) {
+function normalizarTexto(texto) {
+    return texto
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim();
+}
+
+       if (ligaEscolhida === 'laliga' || ligaEscolhida === 'la liga') titulo.innerText = "La Liga";
+else if (ligaEscolhida === 'premier') titulo.innerText = "Premier League";
+else if (ligaEscolhida === 'brasileirao') titulo.innerText = "Brasileirão";
+else if (ligaEscolhida === 'seleções') titulo.innerText = "Seleções";
+else if (ligaEscolhida === 'retro') titulo.innerText = "Retrô";
+else if (ligaEscolhida === 'ligue 1') titulo.innerText = "Ligue 1";
+else if (ligaEscolhida === 'copa do mundo') titulo.innerText = "FIFA World Cup 2026";
+else if (ligaEscolhida === 'serie a') titulo.innerText = "Serie A";
+else if (ligaEscolhida === 'bundesliga') titulo.innerText = "Bundesliga";
+else titulo.innerText = "Camisas Encontradas";
+
+if (termoBusca) {
+    titulo.innerText = 'Resultados para: ' + termoBusca;
+}
+
+        let quantidadeResultados = 0;
+
+for (const idProduto in catalogo) {
+    const camisa = catalogo[idProduto];
+
+    const nomeCamisa = normalizarTexto(camisa.nome);
+    const pesquisa = normalizarTexto(termoBusca);
+
+    if (
+        termoBusca
+            ? nomeCamisa.includes(pesquisa)
+            : camisa.liga === ligaEscolhida
+    ) {
+        quantidadeResultados++;
                 
                 let htmlPreco = camisa.precoAntigo 
                     ? `<del style="color: #777; font-size: 0.8em; font-weight: normal;">${camisa.precoAntigo}</del> <br> <strong>${camisa.preco}</strong>` 
@@ -454,6 +525,20 @@
                 `;
             }
         }
+
+if (termoBusca && quantidadeResultados === 0) {
+    vitrine.innerHTML = `
+        <p style="
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 30px;
+            font-size: 16px;
+        ">
+            Nenhuma camisa encontrada para
+            "${termoBusca}". Tente outro nome.
+        </p>
+    `;
+}
 
         const numeroWhatsApp = "5546991087501"; 
         let carrinho = JSON.parse(localStorage.getItem('carrinhoDGSports')) || [];
